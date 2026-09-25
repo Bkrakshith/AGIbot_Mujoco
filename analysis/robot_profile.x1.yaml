@@ -1,0 +1,36 @@
+# Robot profile for the skill's posture / reach-manifold analysis scripts
+# (~/.claude/skills/training-humanoid-rl-policies/scripts/posture_ik.py etc.).
+# AgiBot X1 (assets/x1_mjx.xml, vendor xyber_x1_serial). Needed for posture
+# tasks; for stand/walk it provides the static stance check.
+
+robot: AgiBot X1
+xml: /home/rakshith/ntu_dev/AGIBOT/Mujoco_agibot/assets/x1_mjx.xml
+keyframe: home
+
+base_body: pelvis
+
+leg_joints_left:
+  - left_hip_pitch
+  - left_hip_roll
+  - left_hip_yaw
+  - left_knee_pitch
+  - left_ankle_pitch
+  - left_ankle_roll
+right_from_left: [left, right]
+# X1 mirrors hip pitch/roll/yaw axes between legs (see default_pose); verified
+# by posture_ik.py --check-mirror (0.8 mm) plus an explicit ankle-roll
+# orientation check (roll sign -1: mirrored foot orientation error 3e-4).
+mirror_sign: [-1, -1, -1, 1, 1, -1]
+knee_joint: left_knee_pitch
+
+foot_geoms: {left: left_foot, right: right_foot}
+
+hand_bodies: [left_payload, right_payload]
+payload_bodies: [left_payload, right_payload]
+payload_bodies_dedicated: true
+payload_radius: 0.1
+
+ik_iters: 80
+ik_damping: 0.05
+ik_step: 0.8
+ik_tol: 0.002

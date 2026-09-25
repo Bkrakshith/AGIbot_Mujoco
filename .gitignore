@@ -1,0 +1,19 @@
+# no checkpoints, ONNX, or videos in git (hard boundary)
+outputs/
+wandb/
+*.mp4
+*.onnx
+*.pt
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+
+# Claude Code local settings have machine-specific absolute paths
+.claude/settings.local.json
+
+# macOS
+**/.DS_Store

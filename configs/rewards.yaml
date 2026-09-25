@@ -1,0 +1,132 @@
+# Reward shaping, stability-dominant (spec section 5). All weights live here;
+# rewards.py contains no magic numbers. Positive weights = rewards,
+# negative = penalties. Per-step values, summed then multiplied by control dt
+# is NOT applied (weights are already per-step scaled).
+
+kernels:
+  # exp(-|v_err|^2 / sigma). Skill rule sigma >= e_max^2 / 2.3 so the kernel
+  # has gradient at the do-nothing error: e_max = |(1.2, 0.4)| = 1.26 m/s
+  # -> sigma >= 0.69. (X1 cfg uses exp(-5 |err|^2) i.e. sigma 0.2, with a
+  # command curriculum that starts slow; we have no command curriculum.)
+  tracking_sigma: 0.7
+  tracking_yaw_sigma: 0.25
+  tracking_height_sigma: 0.02 # exp(-h_err^2 / sigma)
+  tracking_reach_sigma: 0.10  # exp(-hand_err^2 / sigma); posture tasks only
+
+weights:
+  # command tracking — at zero command this IS the stand-still reward
+  tracking_lin_vel: 1.5
+  tracking_yaw: 1.5           # raised 0.75->1.5 (payload study, 2026-08-04):
+                              # heading hold IS straight-line walking — under
+                              # asymmetric payload the yaw bias must be worth
+                              # correcting; at 0.75 a slow arc cost ~nothing.
+  tracking_height: 0.5        # height command is fixed at the stand height (train.yaml)
+  tracking_reach: 0.0         # hand-height tracking: posture tasks only, inert here
+  # stability core
+  # SMOOTHNESS PACK (teacher_v6, 2026-08-03): the v5/student_v3 gait walks
+  # but rocks — measured on the full model at 0.5 m/s with 7 kg asym:
+  # roll-rate RMS 0.56 rad/s, roll p2p 0.23 rad (~13 deg), pitch-rate RMS
+  # 0.21 rad/s, vz RMS 0.16 m/s, height p2p 6 cm. The payload platform
+  # (torso) must stay quiet during locomotion, so the torso-motion and
+  # smoothness penalties below were raised together (ang_vel_xy 5x,
+  # orientation 1.5x, lin_vel_z 3x, feet_impact 3x, action_rate 3x,
+  # joint_acc 5x). Target: halve roll/pitch-rate RMS and vz RMS. Risk of
+  # regressing to drift is guarded by the air-time gates — if a stage
+  # stalls with air-time near zero, back these off before anything else.
+  orientation: -3.0           # projected-gravity xy^2 (torso upright)
+  # ang_vel_xy SPLIT into roll/pitch (payload study, 2026-08-04): at the
+  # combined -0.75 the v6 gait went quiet in roll but DOUBLED student
+  # pitch-rate RMS (0.21->0.43). Pitch is damped harder; roll keeps
+  # headroom for the lateral weight transfer a gait requires.
+  ang_vel_roll: -0.75
+  # pitch: -2.0 (rev1) -> -1.5 (rev2) -> -1.25 (rev4). Revs 2/3 measured the
+  # smooth-class tracking asymptote at ~0.74-0.76 vs the (old-recipe) 0.78
+  # gate, with HEALTHY gaits every time (air 0.0078-0.0098). Gates were
+  # recalibrated for the smooth class alongside (train.yaml); pitch keeps a
+  # ~1.7x margin over roll to hold the anti-rock objective.
+  ang_vel_pitch: -1.25
+  lin_vel_z: -1.5             # vertical bouncing
+  # feet
+  feet_air_time: 5.0          # gait shaping when moving — raised from 1.0:
+                              # at 1.0 the per-step average (~0.02) was ~20x too
+                              # weak to compete with standing-still income
+                              # (teacher_v2 post-mortem, notebook section 9.3)
+  feet_stance: 0.5            # BOTH-feet-planted bonus when command is zero
+  feet_slip: -0.25            # horizontal foot speed while in contact
+  feet_impact: -0.3           # touchdown vertical-speed^2 — hard touchdowns are
+                              # what excites the torso (smoothness pack, was -0.1)
+  # CoM / support polygon proxy (ZMP margin approximation), standing only
+  com_support: -1.0
+  # Balance-informed margins, OFF for locomotion (posture tasks turn them on).
+  com_margin: 0.0             # squared shortfall of CoM margin below target
+  capture_margin: 0.0         # same, for the LIP capture point
+  # arms act only when balance demands it
+  arm_residual: -0.1
+  # effort
+  torque: -2.0e-5
+  joint_acc: -5.0e-7          # smoothness pack, was -1.0e-7
+  action_rate: -0.06          # smoothness pack, was -0.02
+  # knee spring: penalise deficit below min_knee_angle to keep knees bent
+  knee_bend: -2.0
+  # CPG imitation: MSE between leg joints and reference, gated by effective
+  # commanded speed (yaw folded in). -2.0 was ~0.08/step at max deviation —
+  # invisible next to tracking (1.5) and termination (-100). At -15.0 a large
+  # deviation costs ~0.6-1.3/step: commensurate with the standing income it
+  # must out-compete, still far below the falling penalty.
+  gait_imitation: -15.0
+  # Periodic contact reward (clock-based), SPLIT 2026-08-03 into stance and
+  # swing halves after the combined equality-match failed 4x (teacher_v3 s1b
+  # x3 at weight 1.0, teacher_v4 s1 at 3.0; air-time flat at ~0.001 vs gate
+  # 0.006 every time). The combined term paid a stander ~stance_duty (0.6)
+  # per step FOR FREE, so scaling its weight scaled drift income in lockstep
+  # with walker income — the drift optimum could never be out-competed.
+  #   stance half: foot down in its stance window. Walker 0.6/step, stander
+  #     0.6/step (free) -> small weight, shaping only.
+  #   swing half: foot UP in its swing window. Walker ~0.4/step, stander
+  #     EXACTLY 0 -> this is the load-bearing anti-drift term. At 7.5 a
+  #     correct walker earns ~3.0/step that a stander cannot touch, and the
+  #     very first correctly-timed foot-lift pays immediately, before
+  #     tracking improves. Both halves speed-gated (zero at stand-still).
+  gait_contact_stance: 0.5
+  gait_contact_swing: 7.5
+  # termination (applied once, on the terminating step)
+  termination: -100.0
+
+# Support-polygon margins the (inactive) balance terms aim for (m). The X1
+# sole half-length is 0.073 m; 0.035 asks for about half of it.
+support_margin_target: 0.035
+capture_margin_target: 0.02
+
+min_knee_angle: 0.25  # rad (~14°; X1 default knee is 0.49); knees below this are penalised by knee_bend
+
+# Central Pattern Generator (X1 reference gait, see src/x1_locomotion/cpg.py).
+# Shape and numbers from the vendor X1 cfg (rewards.cycle_time,
+# rewards.final_swing_joint_delta_pos, compute_ref_state's 0.1 dead band).
+cpg:
+  cycle_time_s: 0.7         # X1 cfg rewards.cycle_time -> 1.43 Hz gait clock
+  dead_band: 0.1            # |sin| below this = double support (X1 compute_ref_state)
+  # swing-leg joint delta at mid-swing, added to the default pose (X1 cfg
+  # final_swing_joint_delta_pos). Order per leg: hip_pitch hip_roll hip_yaw
+  # knee ankle_pitch ankle_roll; right-leg signs mirror the joint axes.
+  swing_delta: [0.25, 0.05, -0.11, 0.35, -0.16, 0.0,
+                -0.25, -0.05, 0.11, 0.35, -0.16, 0.0]
+  v_clear_ref: 0.2          # m/s effective speed for full swing amplitude
+                            # (X1 stands below 0.05 m/s: commands.stand_com_threshold)
+  # Speed used by every gait gate: |(vx, vy, r * wz)|. r = 1.0 reproduces the
+  # X1 cfg convention (stand/walk decided on the plain norm of (vx, vy, wz)),
+  # so rotate-in-place gets full swing. The physical foot-arc radius (0.134 m)
+  # gave rotation only 1/3 of the swing amplitude — too little clearance.
+  yaw_equiv_radius: 1.0
+  gate_speed_gain: 4.0      # gait_imitation / gait_contact gate = tanh(gain * v_eff)
+
+air_time_target: 0.33         # s, clipped here — the CPG swing duration:
+                              # 0.7 s * (pi - 2*asin(0.1)) / (2*pi) = 0.33 s
+standing_cmd_threshold: 0.05  # |cmd| below this counts as stand-still
+
+termination:
+  base_height_min: 0.35       # m; X1 stands at 0.613 (pelvis), ~57 %
+  max_tilt: 1.0               # rad, torso roll and BACKWARD pitch
+  # Forward pitch is limited separately (env._tilted). Equal to max_tilt for
+  # stand/walk; only a forward-bending posture task would raise it.
+  max_pitch_forward: 1.0      # rad
+  # self-collision (foot-foot, hand-torso penetration) also terminates

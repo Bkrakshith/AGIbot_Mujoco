@@ -1,0 +1,137 @@
+# Training configuration: env counts, PPO hyperparameters, curriculum stages,
+# network sizes, checkpointing, distillation. M3 Max CPU-backend defaults;
+# num_envs default should be set to the knee point found by scripts/bench.py.
+
+env:
+  episode_length_s: 20.0        # 2000 control steps at 100 Hz
+
+commands:
+  p_stand: 0.35                 # pure stand-still episodes
+  p_walk: 0.45                  # locomotion
+  p_switch: 0.20                # walk -> stop / stop -> walk mid-episode (s3+)
+  # X1 cfg commands.ranges (lin_vel_x [-0.4, 1.2], lin_vel_y +-0.4,
+  # ang_vel_yaw +-0.6). Battery commands are checked against these ranges.
+  vx_range: [-0.4, 1.2]         # m/s
+  vy_range: [-0.4, 0.4]
+  yaw_range: [-0.6, 0.6]        # rad/s
+  # Pelvis height command, FIXED at the measured home height (0.613 m; X1 cfg
+  # base_height_target 0.61). Kept in the obs for contract stability.
+  height_range: [0.613, 0.613]  # m
+  switch_window_s: [4.0, 16.0]  # command switch time within episode
+
+ppo:
+  # X1 bench on the RTX 3070 (scripts/bench.py --backend gpu, 2026-09-25,
+  # 100 Hz / 5 substeps): 1.4k env steps/s at 2048, 6.5k at 8192, 12.5k at
+  # 16384 — per-step latency is flat (~1.3 s), so bigger batches are ~free.
+  # Divisibility: batch_size * num_minibatches % num_envs == 0.
+  num_envs: 16384
+  num_eval_envs: 128            # >= 128 for gates: at 32 the survival noise is +-0.05 (failure M9)
+  episode_length: 2000          # = episode_length_s / 0.01 s control dt
+  unroll_length: 20
+  batch_size: 4096
+  num_minibatches: 4            # batch_size*num_minibatches must be divisible by num_envs
+  num_updates_per_batch: 4
+  learning_rate: 3.0e-4
+  entropy_cost: 5.0e-3
+  # Horizon kept at the H1-2-validated 0.67 s: 1/(1-gamma) steps at 100 Hz.
+  # (X1 cfg used 0.994, a 1.7 s horizon, with a different PPO variant.)
+  discounting: 0.985
+  gae_lambda: 0.95
+  reward_scaling: 1.0
+  clipping_epsilon: 0.3
+  max_grad_norm: 1.0
+  normalize_observations: true
+  seed: 0
+
+networks:
+  latent_size: 16               # env-factor latent z (spec: 8-16)
+  encoder_hidden: [64, 64]      # privileged encoder mu(x_priv) -> z
+  policy_hidden: [512, 256, 128]
+  value_hidden: [512, 256, 128]
+  adaptation:                   # student adaptation module (RMA-style 1D CNN)
+    history_length: 50          # control steps of student obs
+    conv_channels: [64, 64, 32]
+    conv_kernels: [5, 4, 3]
+    conv_strides: [2, 2, 1]     # padding VALID (exact torch/ONNX parity)
+    dense: 128
+
+checkpoint:
+  interval_s: 300               # save at least every 5 min wall time
+  eval_every_steps: 3_000_000   # ~4 min at the measured 12.5k steps/s (16384 envs)
+  root: outputs/checkpoints
+
+# Curriculum: stand + walk for the X1. Stages gate on TWO per-step metrics
+# from the final eval (curriculum.gate_passed):
+#   tracking  >= gate_tracking — lin-vel kernel. A policy that never moves
+#                scores the DO-NOTHING FLOOR (curriculum.do_nothing_floor);
+#                gates sit at (floor + 1) / 2, pinned by tests/test_curriculum.py.
+#   air time  >= gate_air_time — raw feet_air_time reward per step; lean-drift
+#                scores exactly 0 on it (H1-2 failure L4). Ideal X1 gait at
+#                100 Hz: 2 x 0.33 s per 70-step cycle x 0.65 walk fraction
+#                ~ 0.006/step; gates at 1/2 and ~0.4 of that (H1-2 rule).
+# No payload stages: this is the stand/walk task. Push forces are sized for
+# the 36 kg X1 (60 N x 0.2 s = 0.33 m/s; X1 cfg pushes 0.2 m/s).
+# Budgets are H1-2-derived, doubled because the X1 runs at 100 Hz (twice the
+# env steps per simulated second). A stall -> more budget first, never a
+# smaller spec.
+curriculum:
+  - name: s1_nominal            # stand + walk, calm physics, no pushes
+    num_timesteps: 60_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 0.0        # no arm joints on the X1
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.879         # (floor 0.757 + 1) / 2
+    gate_air_time: 0.003
+  - name: s2_gait               # consolidate the gait (born calm, refined later)
+    num_timesteps: 40_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 0.0
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.879         # (floor 0.757 + 1) / 2
+    gate_air_time: 0.003
+  - name: s3_pushes             # light pushes + stand<->walk switches
+    num_timesteps: 60_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 30.0
+    arm_range_scale: 0.0
+    swap_enabled: false
+    cmd_switch_enabled: true
+    gate_tracking: 0.897         # (floor 0.794 + 1) / 2
+    gate_air_time: 0.0025
+  - name: s4_robust             # full pushes; matches the eval battery
+    num_timesteps: 60_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 60.0
+    arm_range_scale: 0.0
+    swap_enabled: false
+    cmd_switch_enabled: true
+    gate_tracking: 0.897         # (floor 0.794 + 1) / 2
+    gate_air_time: 0.0025
+
+distill:                        # Phase B (DAgger-style on-policy distillation)
+  num_envs: 128
+  unroll_length: 50
+  learning_rate: 1.0e-3
+  action_loss_weight: 1.0       # loss = mse(z_hat, z) + w * mse(a(z_hat), a(z))
+  num_iterations: 800           # ~5M env steps ≈ 1 h on M3 Max CPU
+  plateau_patience: 100         # early stop when z-loss stops improving
+  seed: 1
+
+finetune:                       # Phase C (optional, gated)
+  survival_drop_gate: 0.02      # run only if student survival drop > 2 %
+  # 5M -> 15M (payload study, 2026-08-04): on-policy push practice is what
+  # moved the push scenario 54% -> 70%; give it 3x the budget (~15 min GPU).
+  num_timesteps: 15_000_000
+  learning_rate: 1.0e-4
+
+logging:
+  wandb_project: x1-locomotion-mjx
+  wandb_mode: offline           # sync later; laptop runs may be offline

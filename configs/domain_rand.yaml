@@ -1,0 +1,48 @@
+# Domain randomisation ranges (spec section 6). Sampled PER EPISODE via
+# state.info-driven model-field replacement (randomize.py), so every reset —
+# including auto-resets inside a training batch — draws a fresh sample.
+
+# Payload machinery is kept (the hand bodies exist) but every stand/walk stage
+# sets payload_max_total: 0, so no load is ever sampled.
+payload:
+  total_mass_range: [0.0, 0.0]   # kg; stand/walk task carries nothing
+  split_fraction_range: [0.0, 1.0]  # left-hand share; covers fully asymmetric 7/0
+  com_offset_range: [-0.10, 0.10]   # m, per hand, per axis (body_ipos)
+  inertia_radius: 0.1            # m, point-mass sphere approx for body_inertia
+  swap_probability: 0.3          # per episode
+  swap_window_s: [2.0, 16.0]     # swap fires at a uniform time in this window
+
+ground:
+  friction_range: [0.2, 1.3]            # X1 cfg
+  restitution_range: [0.0, 0.1]  # approximated via floor solref scaling
+
+body:
+  link_mass_scale_range: [0.9, 1.1]     # ±10 % all links
+  base_mass_delta_range: [-3.0, 3.0]    # kg added to pelvis (X1 cfg added_mass_range)
+  base_com_shift_range: [-0.05, 0.05]   # m, pelvis CoM xy/z shift
+
+actuation:
+  pd_gain_scale_range: [0.8, 1.2]       # single kp and kd multiplier each (X1 cfg)
+  joint_damping_scale_range: [0.3, 1.5] # X1 cfg joint_damping_range (x vendor 1.0)
+  armature_scale_range: [0.01, 5.0]     # x nominal 0.01 -> X1 cfg [0.0001, 0.05]
+  motor_strength_range: [0.8, 1.2]      # scales torque limits (X1 cfg torque_multiplier_range)
+  action_latency_steps: [0, 4]          # control steps at 100 Hz: 0-40 ms (X1 cfg lag 5-40 ms)
+
+# X1 cfg noise_scales x noise_level 1.5
+obs_noise:
+  gravity: 0.075
+  gyro: 0.3          # rad/s
+  joint_pos: 0.03    # rad
+  joint_vel: 2.25    # rad/s
+
+push:
+  # interval tightened 4-8s -> 3-6s (payload study, 2026-08-04): students
+  # plateau at ~70% on the 108N eval pushes; more push events per episode
+  # gives DAgger/Phase C more disturbance signatures to learn from.
+  interval_range_s: [3.0, 6.0]
+  duration_s: 0.2
+  max_force_n: 60.0    # curriculum scales this; 60 N x 0.2 s on 36 kg = 0.33 m/s
+                       # (X1 cfg pushes 0.2 m/s)
+
+# Arm pose command sampling (unused: the X1 model has no arm joints).
+arm_pose_max_offsets: []
