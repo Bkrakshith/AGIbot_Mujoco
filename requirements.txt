@@ -1,0 +1,32 @@
+# AgiBot X2 stand + walk (CPG-guided) — MuJoCo MJX + JAX + brax PPO.
+# Pins mirror the validated H1-2 stack (/home/rakshith/UnitreeH1_2_Factory/Mujoco_unitree).
+# mujoco pinned <3.11: keep training and eval physics identical within a campaign.
+mujoco==3.10.0
+mujoco-mjx==3.10.0
+# jax pinned <0.10: brax 0.14.x still uses jax.device_put_replicated (removed in 0.10).
+jax==0.9.2
+jaxlib==0.9.2
+flax==0.12.6
+optax==0.2.8
+orbax-checkpoint==0.12.1
+brax==0.14.2
+# numpy <2.5: numpy 2.5 breaks jax 0.9.x under vmap.
+numpy==2.4.6
+PyYAML>=6.0
+etils[epath]>=1.9
+mediapy>=1.2
+imageio-ffmpeg>=0.5
+matplotlib>=3.8
+wandb>=0.18
+
+# Export pipeline only (CPU torch; never used in training)
+onnx>=1.16
+onnxruntime>=1.18
+
+# Dev
+pytest>=8.0
+
+# CUDA is opt-in, not a dependency. On the RTX box:
+#   pip install "jax[cuda12]==0.9.2"   and run with --backend gpu
+# torch (CPU) for export:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu

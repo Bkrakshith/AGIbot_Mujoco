@@ -1,0 +1,20 @@
+# Data mix for continued student distillation (student_v2, 2026-09-27).
+# student_v1 under full noise: every scenario >= 96 % except stand + 40 N
+# pushes (72 %; teacher 94 %). PPO fine-tune (Phase C) degraded the student
+# (ep_len 850 -> 348), so instead: more DAgger with the SAME teacher labels
+# on data weighted toward standing under frequent pushes. Walking episodes
+# stay in the mix (30 % + switches) so nothing else is forgotten. Physics
+# DR, arm poses, noise and push magnitude are unchanged (final stage).
+train:
+  commands:
+    p_stand: 0.6
+    p_walk: 0.3
+    p_switch: 0.1
+  distill:
+    beta_decay_iters: 1          # the student already drives; no teacher warm-up
+    num_iterations: 500
+    plateau_patience: 150
+    learning_rate: 1.0e-4        # continue gently
+domain_rand:
+  push:
+    interval_range_s: [1.5, 3.0] # was 3-6 s: ~2x the push events per episode

@@ -1,0 +1,72 @@
+# Domain randomisation ranges (spec section 6). Sampled PER EPISODE via
+# state.info-driven model-field replacement (randomize.py), so every reset —
+# including auto-resets inside a training batch — draws a fresh sample.
+
+# Payload machinery is kept (the hand bodies exist) but every stand/walk stage
+# sets payload_max_total: 0, so no load is ever sampled.
+payload:
+  total_mass_range: [0.0, 0.0]   # kg; stand/walk task carries nothing
+  split_fraction_range: [0.0, 1.0]  # left-hand share; covers fully asymmetric 7/0
+  com_offset_range: [-0.10, 0.10]   # m, per hand, per axis (body_ipos)
+  inertia_radius: 0.1            # m, point-mass sphere approx for body_inertia
+  swap_probability: 0.3          # per episode
+  swap_window_s: [2.0, 16.0]     # swap fires at a uniform time in this window
+
+ground:
+  friction_range: [0.2, 1.3]            # X1 cfg
+  restitution_range: [0.0, 0.1]  # approximated via floor solref scaling
+
+body:
+  link_mass_scale_range: [0.9, 1.1]     # ±10 % all links
+  base_mass_delta_range: [-3.0, 3.0]    # kg added to pelvis (X1 cfg added_mass_range)
+  base_com_shift_range: [-0.05, 0.05]   # m, pelvis CoM xy/z shift
+
+actuation:
+  pd_gain_scale_range: [0.8, 1.2]       # single kp and kd multiplier each (X1 cfg)
+  joint_damping_scale_range: [0.3, 1.5] # X1 cfg joint_damping_range (x vendor 1.0)
+  armature_scale_range: [0.01, 5.0]     # x nominal 0.01 -> X1 cfg [0.0001, 0.05]
+  motor_strength_range: [0.8, 1.2]      # scales torque limits (X1 cfg torque_multiplier_range)
+  action_latency_steps: [0, 4]          # control steps at 100 Hz: 0-40 ms (X1 cfg lag 5-40 ms)
+
+# Observation noise, Gaussian std (env adds N(0, std^2)). The X1 cfg
+# (humanoid-gym) adds UNIFORM noise (2*rand-1) * noise_scale * noise_level
+# with noise_level 1.5, i.e. amplitude a = scale x 1.5, whose std is a/sqrt(3).
+# The first port used the amplitudes as Gaussian stds: 1.73x the vendor's
+# noise with heavy tails, and at full level it took walking survival of a
+# working s2 policy from 35 % to 0 % (teacher_v5 s3 stall, 2026-09-25).
+obs_noise:
+  gravity: 0.043     # 0.05  x 1.5 / sqrt(3)
+  gyro: 0.173        # 0.2   x 1.5 / sqrt(3), rad/s
+  joint_pos: 0.017   # 0.02  x 1.5 / sqrt(3), rad
+  joint_vel: 1.299   # 1.5   x 1.5 / sqrt(3), rad/s
+
+push:
+  # interval tightened 4-8s -> 3-6s (payload study, 2026-08-04): students
+  # plateau at ~70% on the 108N eval pushes; more push events per episode
+  # gives DAgger/Phase C more disturbance signatures to learn from.
+  interval_range_s: [3.0, 6.0]
+  duration_s: 0.2
+  max_force_n: 60.0    # curriculum scales this; 60 N x 0.2 s on 36 kg = 0.33 m/s
+                       # (X1 cfg pushes 0.2 m/s)
+
+# Task arm poses (randomize.sample_arm_pose). Per arm, 6 values:
+# shoulder_pitch shoulder_roll shoulder_yaw elbow_pitch elbow_yaw wrist_pitch
+# (same signs both arms; see configs/actuators.yaml). Each arm independently
+# picks one pose + uniform noise, then moves to the next pose during the
+# episode, so the leg policy must stay stable while the arms move and while
+# the CoM shifts with them. The curriculum (stage.arm_range_scale) blends from
+# arms-down (0) to these full poses (1).
+arm_poses:
+  - [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]      # down (vendor welded pose)
+  - [-1.57, 0.0, 0.0, 0.0, 0.0, 0.0]    # straight forward
+  - [-1.2, -0.1, 0.0, 1.0, 0.0, 0.0]    # forward reach, elbow bent
+  - [0.0, -1.57, 0.0, 0.0, 0.0, 0.0]    # sideways
+  - [-2.9, -0.25, 0.0, 0.0, 0.0, 0.0]   # overhead
+  - [0.6, -0.1, 0.0, 0.0, 0.0, 0.0]     # backward
+  - [-0.5, -0.1, 0.0, 1.4, 0.0, 0.0]    # carry (forearm forward)
+arm_pose_noise: [0.3, 0.25, 0.4, 0.3, 0.4, 0.3]   # rad, uniform +- per joint
+arm_pose_p_symmetric: 0.4   # both arms same library pose (e.g. both forward)
+arm_hold_s: [1.5, 5.0]    # hold a pose this long before moving on
+# 0.5-1.5 s -> 1.0-2.5 s (2026-09-26): a manipulation arm moves at well under
+# 2 rad/s; the fast 0.5 s swings were an unrealistic disturbance source.
+arm_move_s: [1.0, 2.5]    # linear move between poses over this long

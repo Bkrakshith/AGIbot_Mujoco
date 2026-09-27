@@ -1,0 +1,29 @@
+# ABLATION: ablations/nodr.yaml + tracking_sigma 0.7 -> 0.25 (single change vs
+# ablate_nodr). ablate_nodr stepped (air 0.0067, ep_len ~1940) but barely
+# tracked forward commands (0.45 m/s -> 0.10 m/s): at sigma 0.7 a 0.35 m/s
+# error still pays 84 % of the kernel. X1 vendor used sigma 0.2 + a command
+# curriculum. The gate is left at 0.971 here; gates are only recomputed for
+# the main config once the change is adopted.
+domain_rand:
+  ground: {friction_range: [1.0, 1.0], restitution_range: [0.0, 0.0]}
+  body: {link_mass_scale_range: [1.0, 1.0], base_mass_delta_range: [0.0, 0.0],
+         base_com_shift_range: [0.0, 0.0]}
+  actuation: {pd_gain_scale_range: [1.0, 1.0], joint_damping_scale_range: [1.0, 1.0],
+              armature_scale_range: [1.0, 1.0], motor_strength_range: [1.0, 1.0],
+              action_latency_steps: [0, 0]}
+  obs_noise: {gravity: 0.0, gyro: 0.0, joint_pos: 0.0, joint_vel: 0.0}
+rewards:
+  kernels: {tracking_sigma: 0.25}
+train:
+  curriculum:
+    - name: s1_nominal
+      cmd_scale: 0.4
+      num_timesteps: 60_000_000
+      payload_max_total: 0.0
+      payload_symmetric: true
+      push_max_n: 0.0
+      arm_range_scale: 0.0
+      swap_enabled: false
+      cmd_switch_enabled: false
+      gate_tracking: 0.971
+      gate_air_time: 0.003

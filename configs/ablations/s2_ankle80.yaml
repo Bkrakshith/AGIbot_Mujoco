@@ -1,0 +1,35 @@
+# ABLATION: ankle torque limit 18 Nm (vendor MJCF ctrlrange) -> 80 Nm (vendor
+# URDF effort, which the vendor's Isaac Gym training used). Single change vs
+# teacher_v2 s2_gait (same init checkpoint, same stage config), which stalled:
+# air 0.0016/0.003, ep_len ~950/2000, walking falls 40-70 % of episodes.
+# Run: python train/train_teacher.py --run_name ablate_s2_ankle80 \
+#        --overlay ablations/s2_ankle80.yaml --backend gpu \
+#        --init_from outputs/checkpoints/ablate_nodr_s025/ckpt_58982400 --start_stage s2_gait
+actuators:
+  torque_limits:
+  - 150
+  - 50
+  - 50
+  - 150
+  - 80
+  - 80
+  - 150
+  - 50
+  - 50
+  - 150
+  - 80
+  - 80
+train:
+  curriculum:
+  - name: s2_gait
+    cmd_scale: 0.7
+    dr_scale: 0.5
+    num_timesteps: 40000000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 0.0
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.855
+    gate_air_time: 0.003

@@ -1,0 +1,243 @@
+# Training configuration: env counts, PPO hyperparameters, curriculum stages,
+# network sizes, checkpointing, distillation. M3 Max CPU-backend defaults;
+# num_envs default should be set to the knee point found by scripts/bench.py.
+
+env:
+  episode_length_s: 20.0        # 2000 control steps at 100 Hz
+
+# Observation noise seen by the TEACHER, as a fraction of domain_rand.obs_noise.
+# 0: the teacher is the clean-information expert; the full X1 noise is learned
+# by the history-based student (distillation / fine-tune envs always use the
+# full noise). See env.py and the teacher_v11 s2d analysis.
+teacher_obs_noise: 0.0
+
+# Show the teacher the instantaneous push force? No: privileged obs must be
+# INFERABLE from history (friction, gains, motor strength, latency persist;
+# a push impulse does not). With it, the teacher reacts to pushes before the
+# student can sense them and distillation fails on exactly that case.
+privileged_push: false
+
+commands:
+  p_stand: 0.35                 # pure stand-still episodes
+  p_walk: 0.45                  # locomotion
+  p_switch: 0.20                # walk -> stop / stop -> walk mid-episode (s3+)
+  # X1 cfg commands.ranges (lin_vel_x [-0.4, 1.2], lin_vel_y +-0.4,
+  # ang_vel_yaw +-0.6). Battery commands are checked against these ranges.
+  vx_range: [-0.4, 1.2]         # m/s
+  vy_range: [-0.4, 0.4]
+  yaw_range: [-0.6, 0.6]        # rad/s
+  # Pelvis height command, FIXED at the measured home height (0.613 m; X1 cfg
+  # base_height_target 0.61). Kept in the obs for contract stability.
+  height_range: [0.613, 0.613]  # m
+  switch_window_s: [4.0, 16.0]  # command switch time within episode
+
+ppo:
+  # X1 bench on the RTX 3070 (scripts/bench.py --backend gpu, 2026-09-25,
+  # 100 Hz / 5 substeps): 1.4k env steps/s at 2048, 6.5k at 8192, 12.5k at
+  # 16384 — per-step latency is flat (~1.3 s), so bigger batches are ~free.
+  # Divisibility: batch_size * num_minibatches % num_envs == 0.
+  num_envs: 16384
+  num_eval_envs: 128            # >= 128 for gates: at 32 the survival noise is +-0.05 (failure M9)
+  episode_length: 2000          # = episode_length_s / 0.01 s control dt
+  unroll_length: 20
+  # Gradient steps per env step must match the H1-2-validated geometry
+  # (2048 envs, batch 512 x 4 minibatches = 16 grad steps per 40,960 steps).
+  # teacher_v1 attempt 2 (2026-09-25) used batch 4096 x 4 at 16384 envs: 8x
+  # fewer updates per sample, and ep_len sat at ~140/2000 (falling in 1.4 s)
+  # for 13M steps = 40 iterations. 512 x 32 restores the ratio (128 grad steps
+  # per 327,680-step iteration) with the same 10,240-sample minibatch.
+  batch_size: 512
+  num_minibatches: 32           # batch_size*num_minibatches must be divisible by num_envs
+  num_updates_per_batch: 4
+  learning_rate: 3.0e-4
+  entropy_cost: 5.0e-3
+  # Horizon kept at the H1-2-validated 0.67 s: 1/(1-gamma) steps at 100 Hz.
+  # (X1 cfg used 0.994, a 1.7 s horizon, with a different PPO variant.)
+  discounting: 0.985
+  gae_lambda: 0.95
+  reward_scaling: 1.0
+  clipping_epsilon: 0.3
+  max_grad_norm: 1.0
+  normalize_observations: true
+  seed: 0
+
+networks:
+  latent_size: 16               # env-factor latent z (spec: 8-16)
+  encoder_hidden: [64, 64]      # privileged encoder mu(x_priv) -> z
+  policy_hidden: [512, 256, 128]
+  value_hidden: [512, 256, 128]
+  adaptation:                   # student adaptation module (RMA-style 1D CNN)
+    history_length: 50          # control steps of student obs
+    conv_channels: [64, 64, 32]
+    conv_kernels: [5, 4, 3]
+    conv_strides: [2, 2, 1]     # padding VALID (exact torch/ONNX parity)
+    dense: 128
+
+checkpoint:
+  interval_s: 300               # save at least every 5 min wall time
+  eval_every_steps: 3_000_000   # ~4 min at the measured 12.5k steps/s (16384 envs)
+  root: outputs/checkpoints
+
+# Curriculum: stand + walk for the X1. Stages gate on TWO per-step metrics
+# from the final eval (curriculum.gate_passed):
+#   tracking  >= gate_tracking — lin-vel kernel. A policy that never moves
+#                scores the DO-NOTHING FLOOR (curriculum.do_nothing_floor);
+#                gates sit at (floor + 1) / 2, pinned by tests/test_curriculum.py.
+#   air time  >= gate_air_time — raw feet_air_time reward per step; lean-drift
+#                scores exactly 0 on it (H1-2 failure L4). Ideal X1 gait at
+#                100 Hz: 2 x 0.33 s per 70-step cycle x 0.65 walk fraction
+#                ~ 0.006/step; gates at 1/2 and ~0.4 of that (H1-2 rule).
+# Commands AND domain randomisation are ramped in (cmd_scale, dr_scale): with
+# the full X1 DR from step 0 no gait ever formed (teacher_v1 attempts 3-4,
+# ablate_nodr). Both reach 1.0 by the final stage (tests/test_curriculum.py).
+# No payload stages: this is the stand/walk task. Push forces are sized for
+# the 36 kg X1 (60 N x 0.2 s = 0.33 m/s; X1 cfg pushes 0.2 m/s).
+# Budgets are H1-2-derived, doubled because the X1 runs at 100 Hz (twice the
+# env steps per simulated second). A stall -> more budget first, never a
+# smaller spec.
+curriculum:
+  - name: s1_nominal            # stand + walk, calm physics, no pushes
+    cmd_scale: 0.4              # velocity ranges x 0.4 (command curriculum)
+    dr_scale: 0.0               # domain randomisation x 0.0 (DR curriculum)
+    num_timesteps: 60_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 0.0        # task arm poses x 0.0 (arms-down -> full poses)
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.93         # (floor 0.860 + 1) / 2
+    gate_air_time: 0.003
+    gate_survival: 0.9           # mean ep_len / 2000 (reliability gate)
+  - name: s2_gait               # consolidate the gait (born calm, refined later)
+    cmd_scale: 0.7              # velocity ranges x 0.7 (command curriculum)
+    dr_scale: 0.5               # domain randomisation x 0.5 (DR curriculum)
+    # 40M -> 100M (teacher_v2, 2026-09-25): stalled at air 0.0016-0.0032 /
+    # 0.003 with a real gait that walks stably for 10+ s and then falls
+    # (height termination at 30 deg tilt, both feet airborne). Young gait
+    # being refined -> budget first (skill 5.4). An 80 Nm ankle ablation
+    # (ablations/s2_ankle80.yaml) changed little, so torque is not the fix.
+    # 100M -> 300M (teacher_v3): stalled again at the margin (final tracking
+    # 0.876/0.855, air 0.0028/0.003; no eval passed both), survival still
+    # rising 1000 -> 1240/2000. The vendor X1 trained ~2B steps in total.
+    num_timesteps: 300_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 0.5        # task arm poses x 0.5 (arms-down -> full poses)
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.855         # (floor 0.710 + 1) / 2
+    gate_air_time: 0.003
+    gate_survival: 0.6           # mean ep_len / 2000 (reliability gate)
+  - name: s2b_arms              # full task arm poses, s2 physics/commands
+    # INSERTED (teacher_v7, 2026-09-26): s3 stalled (ep_len 350-630) because
+    # it doubled the arm range together with DR, commands and pushes. The s2
+    # policy survived 90 % of walks in s2 conditions but only 12 % with full
+    # arm poses (17 % even standing); every pose is statically feasible
+    # (CoM margin >= 2.6 cm), so the arms need their own stage.
+    cmd_scale: 0.7
+    dr_scale: 0.5
+    num_timesteps: 150_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 1.0
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.855         # same command distribution as s2 (floor 0.710)
+    gate_air_time: 0.003
+    gate_survival: 0.6           # mean ep_len / 2000 (reliability gate)
+  - name: s2c_dr75
+    # INSERTED (teacher_v8, 2026-09-26): s3 stalled again (ep_len 340-660)
+    # after s2b. From the s2b policy each DR component at full range costs
+    # 5-12 points of walk survival alone (obs noise 30), together 60 % -> 8 %:
+    # the full-DR jump is ramped in two steps, commands/arms/pushes held.
+    cmd_scale: 0.7
+    dr_scale: 0.75
+    num_timesteps: 100_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 1.0
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.855         # same command distribution as s2 (floor 0.710)
+    gate_air_time: 0.003
+    gate_survival: 0.5           # mean ep_len / 2000 (reliability gate)
+  - name: s2d_dr100
+    cmd_scale: 0.7
+    dr_scale: 1.0
+    num_timesteps: 150_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 0.0
+    arm_range_scale: 1.0
+    swap_enabled: false
+    cmd_switch_enabled: false
+    gate_tracking: 0.855         # same command distribution as s2 (floor 0.710)
+    gate_air_time: 0.003
+    gate_survival: 0.5           # mean ep_len / 2000 (reliability gate)
+  - name: s3_pushes             # light pushes + stand<->walk switches
+    cmd_scale: 1.0              # velocity ranges x 1.0 (command curriculum)
+    dr_scale: 1.0               # domain randomisation x 1.0 (DR curriculum)
+    # 60M -> 200M (teacher_v5): teacher_v4 s3 stalled at ep_len ~330-520
+    # mostly because of a normaliser bug (push obs std 1e-6, now fixed in
+    # ppo_teacher.unfreeze_constant_dims); walking survival at s2 conditions
+    # is still only ~32 %, and full DR is the hardest step in the curriculum.
+    num_timesteps: 200_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 30.0
+    arm_range_scale: 1.0        # task arm poses x 1.0 (arms-down -> full poses)
+    swap_enabled: false
+    cmd_switch_enabled: true
+    gate_tracking: 0.833         # (floor 0.667 + 1) / 2
+    gate_air_time: 0.0025
+    gate_survival: 0.6           # mean ep_len / 2000 (reliability gate)
+  - name: s4_robust             # full pushes; matches the eval battery
+    cmd_scale: 1.0              # velocity ranges x 1.0 (command curriculum)
+    dr_scale: 1.0               # domain randomisation x 1.0 (DR curriculum)
+    num_timesteps: 60_000_000
+    payload_max_total: 0.0
+    payload_symmetric: true
+    push_max_n: 60.0
+    arm_range_scale: 1.0        # task arm poses x 1.0 (arms-down -> full poses)
+    swap_enabled: false
+    cmd_switch_enabled: true
+    gate_tracking: 0.833         # (floor 0.667 + 1) / 2
+    gate_air_time: 0.0025
+    gate_survival: 0.8           # mean ep_len / 2000 (reliability gate)
+
+distill:                        # Phase B (DAgger, student trunk + history CNN)
+  # 2026-09-27: the student now trains its own trunk (init = teacher's) on
+  # FULL-noise inputs, labelled by the noise-free teacher on clean state +
+  # privileged obs (see distill_student.distill). GPU-sized.
+  num_envs: 2048
+  unroll_length: 32             # 65,536 samples per iteration
+  num_minibatches: 8
+  num_epochs: 2
+  learning_rate: 3.0e-4
+  action_loss_weight: 5.0       # loss = mse(z_hat, z) + w * mse(a_student, a_teacher)
+  beta_decay_iters: 150         # DAgger: teacher acts w.p. beta, 1 -> 0
+  num_iterations: 1200          # ~79M env steps
+  plateau_patience: 200         # stop when action loss stops improving
+  seed: 1
+
+finetune:                       # Phase C (optional, gated)
+  survival_drop_gate: 0.02      # run only if student survival drop > 2 %
+  # 5M -> 15M (payload study, 2026-08-04): on-policy push practice is what
+  # moved the push scenario 54% -> 70%; give it 3x the budget (~15 min GPU).
+  # 15M -> 60M (2026-09-27): at 16384 envs 15M is only ~46 PPO iterations.
+  # student_v1 under full noise: stand + 40 N pushes 72 % vs teacher 94 %.
+  num_timesteps: 60_000_000
+  learning_rate: 1.0e-4
+  # 16384 envs x 50-step history OOMs the 8 GB GPU (5.1 GiB rollout buffer).
+  # 4096 envs, 128 x 32 = one 4096-env unroll per iteration (~1.4 GB).
+  num_envs: 4096
+  batch_size: 128
+  num_minibatches: 32
+
+logging:
+  wandb_project: x1-locomotion-mjx
+  wandb_mode: offline           # sync later; laptop runs may be offline

@@ -1,0 +1,26 @@
+# ABLATION (not a training config): stage s1 only, with domain randomisation,
+# latency and observation noise switched off. Question it answers: does a
+# stepping gait emerge on nominal X1 physics? teacher_v1 s1 stalled twice
+# (with and without the command curriculum) with falling air time.
+# Run: python train/train_teacher.py --run_name ablate_nodr --overlay ablations/nodr.yaml
+domain_rand:
+  ground: {friction_range: [1.0, 1.0], restitution_range: [0.0, 0.0]}
+  body: {link_mass_scale_range: [1.0, 1.0], base_mass_delta_range: [0.0, 0.0],
+         base_com_shift_range: [0.0, 0.0]}
+  actuation: {pd_gain_scale_range: [1.0, 1.0], joint_damping_scale_range: [1.0, 1.0],
+              armature_scale_range: [1.0, 1.0], motor_strength_range: [1.0, 1.0],
+              action_latency_steps: [0, 0]}
+  obs_noise: {gravity: 0.0, gyro: 0.0, joint_pos: 0.0, joint_vel: 0.0}
+train:
+  curriculum:
+    - name: s1_nominal
+      cmd_scale: 0.4
+      num_timesteps: 60_000_000
+      payload_max_total: 0.0
+      payload_symmetric: true
+      push_max_n: 0.0
+      arm_range_scale: 0.0
+      swap_enabled: false
+      cmd_switch_enabled: false
+      gate_tracking: 0.971
+      gate_air_time: 0.003
