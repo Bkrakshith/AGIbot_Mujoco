@@ -3,7 +3,7 @@
 # tasks; for stand/walk it provides the static stance check.
 
 robot: AgiBot X1
-xml: /home/rakshith/ntu_dev/AGIBOT/Mujoco_agibot/assets/x1_mjx.xml
+xml: assets/x1_mjx.xml        # relative to the repo root; run the analysis from there
 keyframe: home
 
 base_body: pelvis

@@ -1,0 +1,752 @@
+{
+  "model": "agibot_x1 (agibot_x1_train xyber_x1_serial, 12 leg DoF)",
+  "policy_input": {
+    "name": "obs_history",
+    "shape": [
+      1,
+      50,
+      84
+    ],
+    "dtype": "float32",
+    "note": "ring buffer of the last 50 control steps of the observation vector, oldest first, newest at index -1; normalisation is baked into the graph \u2014 feed RAW values. PRIME THE BUFFER WITH observation_normalization.mean ON RESET, NOT ZEROS \u2014 the adaptation CNN is trained on normalised history whose unfilled slots are exactly 0, and only mean-priming reproduces that after in-graph normalisation. Zero-priming feeds -mean/std and destroys the latent for the first 50 steps of every episode."
+  },
+  "observation_normalization": {
+    "mean": [
+      -0.002434731926769018,
+      4.631020601664204e-06,
+      -0.9981282949447632,
+      0.0008640196756459773,
+      0.006238108035176992,
+      0.00199872232042253,
+      0.013563183136284351,
+      0.040013037621974945,
+      -0.00899860542267561,
+      0.014729573391377926,
+      0.03628159314393997,
+      -0.017306925728917122,
+      0.006196629721671343,
+      -0.06127716600894928,
+      -0.010881008580327034,
+      0.009982813149690628,
+      0.030580105260014534,
+      -0.005848318338394165,
+      -0.6009766459465027,
+      -0.2359023243188858,
+      -0.002050631446763873,
+      0.29981380701065063,
+      0.0016402218025177717,
+      0.0019902479834854603,
+      -0.6064221858978271,
+      -0.23684407770633698,
+      -0.001957838423550129,
+      0.30373725295066833,
+      -0.0006946493522264063,
+      0.00684704165905714,
+      -0.0017334281001240015,
+      0.006119842641055584,
+      0.004368294030427933,
+      0.014154194854199886,
+      0.0015942332101985812,
+      -0.005649324972182512,
+      0.003150527598336339,
+      -0.00755731575191021,
+      -0.004003598354756832,
+      0.014419186860322952,
+      -0.0005400386871770024,
+      0.0020007977727800608,
+      -0.0024331470485776663,
+      0.0010830883402377367,
+      -2.0969340766896494e-05,
+      -0.002108681248500943,
+      5.8869503845926374e-05,
+      -2.0519013560260646e-05,
+      -0.0022707900498062372,
+      0.0010506234830245376,
+      -3.885656769853085e-05,
+      -0.0017985682934522629,
+      -6.936850695637986e-05,
+      0.00048649677773937583,
+      -0.08839619159698486,
+      -0.21688751876354218,
+      -0.1076013520359993,
+      -0.08635444939136505,
+      0.17142663896083832,
+      -0.14019185304641724,
+      0.08992267400026321,
+      0.22798046469688416,
+      0.08321710675954819,
+      -0.10606250166893005,
+      0.12141763418912888,
+      0.09907987713813782,
+      0.16846315562725067,
+      -0.00012023553426843137,
+      -1.2839448572776746e-05,
+      0.6129999756813049,
+      -0.6425487995147705,
+      -0.2512063980102539,
+      -0.00036889559123665094,
+      0.32854169607162476,
+      0.0003263481194153428,
+      9.951698302756995e-05,
+      -0.644067645072937,
+      -0.2504396140575409,
+      -6.81944948155433e-05,
+      0.3289591372013092,
+      -4.2357987695140764e-05,
+      0.00016609656449873,
+      -8.254190106526949e-06,
+      2.132325562342885e-06
+    ],
+    "std": [
+      0.05215197429060936,
+      0.03514309599995613,
+      0.017936768010258675,
+      0.2409580945968628,
+      0.16699084639549255,
+      0.24382217228412628,
+      0.12520943582057953,
+      0.09013062715530396,
+      0.10716448724269867,
+      0.14921848475933075,
+      0.08944176882505417,
+      0.09293287992477417,
+      0.1335332691669464,
+      0.08582378923892975,
+      0.15443184971809387,
+      0.15597955882549286,
+      0.09355992823839188,
+      0.08929453790187836,
+      0.9131414890289307,
+      0.4273703396320343,
+      0.3149915337562561,
+      0.42500028014183044,
+      0.31257081031799316,
+      0.2857097089290619,
+      0.9184004068374634,
+      0.4304347038269043,
+      0.31482410430908203,
+      0.4329864978790283,
+      0.3132954239845276,
+      0.28606733679771423,
+      1.021632432937622,
+      0.6553899645805359,
+      0.958425760269165,
+      1.164887547492981,
+      1.42983877658844,
+      1.8860212564468384,
+      1.0289207696914673,
+      0.6673443913459778,
+      0.9206923842430115,
+      1.1728546619415283,
+      1.4108682870864868,
+      1.8241760730743408,
+      0.614085853099823,
+      0.49468502402305603,
+      0.42402926087379456,
+      0.47099342942237854,
+      0.41691577434539795,
+      0.4127664268016815,
+      0.6140319108963013,
+      0.48987865447998047,
+      0.4240163564682007,
+      0.4689984917640686,
+      0.4173174202442169,
+      0.41290682554244995,
+      0.5131422281265259,
+      0.5534572601318359,
+      0.4194224178791046,
+      0.44273892045021057,
+      0.4352780878543854,
+      0.32647523283958435,
+      0.5039857625961304,
+      0.5605419278144836,
+      0.48442012071609497,
+      0.46369659900665283,
+      0.4313603341579437,
+      0.3301902711391449,
+      0.32134735584259033,
+      0.1425723433494568,
+      0.2153564989566803,
+      0.2470160871744156,
+      0.9774178266525269,
+      0.5233983397483826,
+      0.3128436207771301,
+      0.5215123891830444,
+      0.31277135014533997,
+      0.28590863943099976,
+      0.9773412942886353,
+      0.5225473046302795,
+      0.3128379285335541,
+      0.5220907926559448,
+      0.31284981966018677,
+      0.28589436411857605,
+      0.7071191668510437,
+      0.7070943713188171
+    ],
+    "applied": "inside the ONNX graph",
+    "reset_fill": "mean"
+  },
+  "observation_layout": [
+    {
+      "name": "projected_gravity",
+      "slice": [
+        0,
+        3
+      ],
+      "note": "world gravity unit vector expressed in pelvis frame"
+    },
+    {
+      "name": "base_angular_velocity",
+      "slice": [
+        3,
+        6
+      ],
+      "note": "rad/s, pelvis body frame (IMU gyro)"
+    },
+    {
+      "name": "joint_positions_rel",
+      "slice": [
+        6,
+        30
+      ],
+      "note": "q - default_joint_angles, joint_order below"
+    },
+    {
+      "name": "joint_velocities",
+      "slice": [
+        30,
+        54
+      ],
+      "note": "rad/s"
+    },
+    {
+      "name": "previous_action",
+      "slice": [
+        54,
+        66
+      ],
+      "note": "policy output of the previous control step, in [-1, 1]"
+    },
+    {
+      "name": "command",
+      "slice": [
+        66,
+        70
+      ],
+      "note": "[vx m/s, vy m/s, yaw_rate rad/s, base_height m]"
+    },
+    {
+      "name": "arm_pose_command",
+      "slice": [
+        70,
+        82
+      ],
+      "note": "task arm-pose command (rad), 12 arm joints in joint_order[12:]: the SAME targets the arm controller is tracking right now"
+    },
+    {
+      "name": "gait_clock",
+      "slice": [
+        82,
+        84
+      ],
+      "note": "[sin(theta), cos(theta)] of a free-running gait phase the DEPLOYMENT SIDE must maintain: theta += 2*pi*gait_clock_hz*dt each control tick, modulo 2*pi. Initial value is arbitrary (training randomises it); keep the clock running while standing \u2014 the policy learns to ignore it at zero command."
+    }
+  ],
+  "gait_clock_hz": 1.4285714285714286,
+  "policy_output": {
+    "name": "action",
+    "shape": [
+      1,
+      12
+    ],
+    "dtype": "float32",
+    "range": [
+      -1.0,
+      1.0
+    ]
+  },
+  "action_scaling": {
+    "joint_order": [
+      "left_hip_pitch",
+      "left_hip_roll",
+      "left_hip_yaw",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "left_ankle_roll",
+      "right_hip_pitch",
+      "right_hip_roll",
+      "right_hip_yaw",
+      "right_knee_pitch",
+      "right_ankle_pitch",
+      "right_ankle_roll",
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_pitch_joint",
+      "left_elbow_yaw_joint",
+      "left_wrist_pitch_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_pitch_joint",
+      "right_elbow_yaw_joint",
+      "right_wrist_pitch_joint"
+    ],
+    "legs_torso": {
+      "indices": [
+        0,
+        12
+      ],
+      "rule": "target = default_joint_angles[i] + action[i] * scale[i]",
+      "scale": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "arms": {
+      "indices": null,
+      "rule": "NOT actuated by this policy: the arm joints track the task arm_pose_command with their own PD (pd_gains kp/kd[12:]); the policy observes them to stay balanced while they move"
+    },
+    "clip": "targets clipped to joint limits"
+  },
+  "default_joint_angles": [
+    0.4,
+    0.05,
+    -0.31,
+    0.49,
+    -0.21,
+    0.0,
+    -0.4,
+    -0.05,
+    0.31,
+    0.49,
+    -0.21,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nominal_carry_pose": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pd_gains": {
+    "kp": [
+      30,
+      40,
+      35,
+      100,
+      35,
+      35,
+      30,
+      40,
+      35,
+      100,
+      35,
+      35,
+      60,
+      60,
+      30,
+      30,
+      15,
+      10,
+      60,
+      60,
+      30,
+      30,
+      15,
+      10
+    ],
+    "kd": [
+      3,
+      3,
+      4,
+      10,
+      0.5,
+      0.5,
+      3,
+      3,
+      4,
+      10,
+      0.5,
+      0.5,
+      3,
+      3,
+      1.5,
+      1.5,
+      0.8,
+      0.5,
+      3,
+      3,
+      1.5,
+      1.5,
+      0.8,
+      0.5
+    ],
+    "note": "torque = kp*(target-q) - kd*qd at the low-level rate"
+  },
+  "control_rate_hz": 100.0,
+  "lowlevel_rate_hz": 500.0,
+  "payload_assumptions": {
+    "total_kg": [
+      0.0,
+      0.0
+    ],
+    "note": "stand/walk policy: no payload was ever sampled in training (every curriculum stage has payload_max_total 0)."
+  },
+  "command_envelope": {
+    "command_slot_3": "target_base_height_m",
+    "vx_range": [
+      -0.4,
+      1.2
+    ],
+    "vy_range": [
+      -0.4,
+      0.4
+    ],
+    "yaw_rate_range": [
+      -0.6,
+      0.6
+    ],
+    "base_height_range": [
+      0.613,
+      0.613
+    ],
+    "note": "ranges sampled during training; never command outside them."
+  },
+  "training_obs_noise_std": {
+    "gravity": 0.043,
+    "gyro": 0.173,
+    "joint_pos": 0.017,
+    "joint_vel": 1.299
+  },
+  "robot_model": {
+    "urdf": "deploy/isaac/x1_isaac/x1_isaac.urdf (generated from the trained model)",
+    "mass_kg": 36.1645,
+    "joint_order": [
+      "left_hip_pitch",
+      "left_hip_roll",
+      "left_hip_yaw",
+      "left_knee_pitch",
+      "left_ankle_pitch",
+      "left_ankle_roll",
+      "right_hip_pitch",
+      "right_hip_roll",
+      "right_hip_yaw",
+      "right_knee_pitch",
+      "right_ankle_pitch",
+      "right_ankle_roll",
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_pitch_joint",
+      "left_elbow_yaw_joint",
+      "left_wrist_pitch_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_pitch_joint",
+      "right_elbow_yaw_joint",
+      "right_wrist_pitch_joint"
+    ],
+    "torque_limits_nm": [
+      150.0,
+      50.0,
+      50.0,
+      150.0,
+      18.0,
+      18.0,
+      150.0,
+      50.0,
+      50.0,
+      150.0,
+      18.0,
+      18.0,
+      40.0,
+      40.0,
+      20.0,
+      20.0,
+      10.0,
+      6.0,
+      40.0,
+      40.0,
+      20.0,
+      20.0,
+      10.0,
+      6.0
+    ],
+    "joint_limits_rad": [
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.14,
+        3.14
+      ],
+      [
+        -3.1,
+        0.8
+      ],
+      [
+        -1.8,
+        0.3
+      ],
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        0.0,
+        2.2
+      ],
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        -0.8,
+        0.8
+      ],
+      [
+        -3.1,
+        0.8
+      ],
+      [
+        -1.8,
+        0.3
+      ],
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        0.0,
+        2.2
+      ],
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        -0.8,
+        0.8
+      ]
+    ],
+    "passive_damping_nms_per_rad": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "armature_kgm2": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "frictionloss_nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "control": "explicit torque PD recomputed EVERY physics step: tau = clip(kp*(q_target - q) - kd*qd, -torque_limit, +torque_limit), applied as joint effort (simulator drives: stiffness 0, damping 0). Passive joint damping is applied by the simulator IN ADDITION.",
+    "physics_dt_s": 0.002,
+    "policy_dt_s": 0.01,
+    "arm_targets": "arms track arm_pose_command with the same PD (kp/kd[12:]); the policy never writes arm targets",
+    "imu": "base link = pelvis; projected_gravity and base_angular_velocity are expressed in the pelvis frame at its origin",
+    "sole_contacts": {
+      "radius_m": 0.002,
+      "friction": 1.0,
+      "sphere_centres_in_link_frame": {
+        "left_ankle_roll_link": [
+          [
+            0.03,
+            -0.0408,
+            0.07
+          ],
+          [
+            -0.03,
+            -0.0408,
+            0.07
+          ],
+          [
+            0.03,
+            -0.0408,
+            -0.07
+          ],
+          [
+            -0.03,
+            -0.0408,
+            -0.07
+          ]
+        ],
+        "right_ankle_roll_link": [
+          [
+            0.03,
+            0.0408,
+            0.07
+          ],
+          [
+            -0.03,
+            0.0408,
+            0.07
+          ],
+          [
+            0.03,
+            0.0408,
+            -0.07
+          ],
+          [
+            -0.03,
+            0.0408,
+            -0.07
+          ]
+        ]
+      },
+      "note": "the ONLY foot-floor contacts in training"
+    },
+    "initial_state": {
+      "base_height_m": 0.613,
+      "base_quat_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "joint_positions": "default_joint_angles"
+    }
+  },
+  "training_commit_meta": "outputs/checkpoints/student_v3/ckpt_best",
+  "opset": 17
+}

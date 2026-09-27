@@ -1,5 +1,5 @@
-# AgiBot X2 stand + walk (CPG-guided) — MuJoCo MJX + JAX + brax PPO.
-# Pins mirror the validated H1-2 stack (/home/rakshith/UnitreeH1_2_Factory/Mujoco_unitree).
+# AgiBot X1 stand + walk (CPG-guided): MuJoCo MJX + JAX + brax PPO.
+# Versions are pinned to the stack this project was trained and tested with.
 # mujoco pinned <3.11: keep training and eval physics identical within a campaign.
 mujoco==3.10.0
 mujoco-mjx==3.10.0

@@ -1,22 +1,19 @@
-# no checkpoints, ONNX, or videos in git (hard boundary)
+# Training outputs stay local (checkpoints, logs, videos, eval results).
+# The one exception is the released policy in policy/.
 outputs/
 wandb/
 *.mp4
 *.onnx
 *.pt
+!policy/student.onnx
 
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-.DS_Store
-
-
-# local tool settings and notes (machine-specific, not part of the repository)
-.claude/
-CLAUDE.md
-claude.md
-
-# macOS
 **/.DS_Store
 
+# Isaac Sim: local onnxruntime and files generated on each machine
+deploy/isaac/_pydeps/
+deploy/isaac/usd/
+deploy/isaac/scenes/

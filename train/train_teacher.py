@@ -5,8 +5,8 @@
                                 [--backend cpu|gpu] [--resume]
   python train/train_teacher.py --run_name smoke --dry_run   # pipeline check
 
-Long runs: tmux, and on this Linux box ALWAYS prefix with
-`taskset -c 0-7,10-31` (logical CPUs 8/9 segfault under load).
+Long runs: use tmux. If the machine has unstable CPU cores, pin the run to
+the good ones with taskset (see README, Troubleshooting).
 Checkpoints land in outputs/checkpoints/<run_name>/ at every eval (default
 cadence keeps this well under 5 minutes of wall time); --resume picks up the
 latest one (restores params + normalizer + curriculum stage + seed; see

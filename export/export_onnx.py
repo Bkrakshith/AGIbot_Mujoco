@@ -55,6 +55,55 @@ def _command_envelope(cfg) -> dict:
     }
 
 
+def _robot_model(cfg) -> dict:
+    """Physical model the policy was trained on — everything a simulator or
+    robot needs that the URDF cannot express (armature, PD convention, sole
+    contacts, IMU frame), read from the compiled training/eval model."""
+    import mujoco
+    import numpy as np
+    from x1_locomotion.config import FULL_XML, apply_torque_limits
+    m = mujoco.MjModel.from_xml_path(FULL_XML)
+    apply_torque_limits(m, cfg.actuators)
+    dofs = [m.jnt_dofadr[m.actuator_trnid[i, 0]] for i in range(m.nu)]
+    jids = [m.actuator_trnid[i, 0] for i in range(m.nu)]
+    d = mujoco.MjData(m)
+    mujoco.mj_resetDataKeyframe(m, d, m.keyframe("home").id)
+    mujoco.mj_forward(m, d)
+    soles = {}
+    for side in ("left", "right"):
+        b = m.body(f"{side}_ankle_roll_link").id
+        soles[f"{side}_ankle_roll_link"] = [
+            [round(float(x), 5) for x in m.geom_pos[g]] for g in range(m.ngeom)
+            if m.geom_bodyid[g] == b and m.geom_type[g] == mujoco.mjtGeom.mjGEOM_SPHERE
+            and m.geom_contype[g]]
+    return {
+        "urdf": "deploy/isaac/x1_isaac/x1_isaac.urdf (generated from the trained model)",
+        "mass_kg": round(float(m.body_subtreemass[1]), 4),
+        "joint_order": [m.joint(j).name for j in jids],
+        "torque_limits_nm": [float(m.actuator_ctrlrange[i, 1]) for i in range(m.nu)],
+        "joint_limits_rad": [[float(v) for v in m.jnt_range[j]] for j in jids],
+        "passive_damping_nms_per_rad": [float(m.dof_damping[k]) for k in dofs],
+        "armature_kgm2": [float(m.dof_armature[k]) for k in dofs],
+        "frictionloss_nm": [float(m.dof_frictionloss[k]) for k in dofs],
+        "control": ("explicit torque PD recomputed EVERY physics step: "
+                    "tau = clip(kp*(q_target - q) - kd*qd, -torque_limit, +torque_limit), "
+                    "applied as joint effort (simulator drives: stiffness 0, damping 0). "
+                    "Passive joint damping is applied by the simulator IN ADDITION."),
+        "physics_dt_s": float(m.opt.timestep),
+        "policy_dt_s": float(m.opt.timestep) * int(cfg.actuators.control.decimation),
+        "arm_targets": ("arms track arm_pose_command with the same PD (kp/kd[12:]); "
+                        "the policy never writes arm targets"),
+        "imu": ("base link = pelvis; projected_gravity and base_angular_velocity are "
+                "expressed in the pelvis frame at its origin"),
+        "sole_contacts": {"radius_m": 0.002, "friction": 1.0,
+                          "sphere_centres_in_link_frame": soles,
+                          "note": "the ONLY foot-floor contacts in training"},
+        "initial_state": {"base_height_m": round(float(d.qpos[2]), 4),
+                          "base_quat_wxyz": [1.0, 0.0, 0.0, 0.0],
+                          "joint_positions": "default_joint_angles"},
+    }
+
+
 def build_sidecar(cfg, meta) -> dict:
     import mujoco
     from x1_locomotion.config import MJX_XML
@@ -154,9 +203,18 @@ def build_sidecar(cfg, meta) -> dict:
         # the raw values). Real sensors noisier than this are outside the
         # trained envelope.
         "training_obs_noise_std": {k: float(v) for k, v in cfg.domain_rand.obs_noise.items()},
-        "training_commit_meta": meta.get("source_checkpoint", ""),
+        "robot_model": _robot_model(cfg),
+        # repo-relative, so the sidecar carries no machine-specific paths
+        "training_commit_meta": _repo_relative(meta.get("source_checkpoint", "")),
         "opset": 17,
     }
+
+
+def _repo_relative(path):
+    repo = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    if path and os.path.isabs(path) and path.startswith(repo + os.sep):
+        return os.path.relpath(path, repo)
+    return path
 
 
 def main():
