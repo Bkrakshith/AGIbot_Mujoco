@@ -1,0 +1,86 @@
+#usda 1.0
+(
+    defaultPrim = "HandleBox"
+    metersPerUnit = 1
+    upAxis = "Z"
+    doc = """Small corrugated box with two side handles for the X1 pinch-carry task.
+Generated from manip/handle_box.yaml: 0.2 x 0.26 x 0.14 m body, 0.1 kg in total,
+rubber handles 31 mm x 110 mm. Origin at the centre of the box body.
+The look comes from Isaac's sm_box_corrugated_brown_b12_01 prop (Environments/
+warehouse_20x20_envi/props), referenced under Visual at load time from the
+asset root and scaled; its own rigid body and 2 kg mass are switched off here."""
+)
+
+def Xform "HandleBox" (prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"])
+{
+    float physics:mass = 0.1
+
+    def Xform "Visual"   # the corrugated prop is referenced here at load time (x1_task.py)
+    {
+        bool physics:rigidBodyEnabled = 0
+        double3 xformOp:translate = (0, 0, -0.06982)
+        float3 xformOp:scale = (0.39053, 0.49801, 0.27067)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        over "Geometry"
+        {
+            over "sm_box_corrugated_b12_obj_00"
+            {
+                over "sm_box_corrugated_b12_mesh_00"
+                {
+                    bool physics:collisionEnabled = 0
+                    float physics:mass = 0
+                }
+            }
+        }
+    }
+
+    def Cube "Collider" (prepend apiSchemas = ["PhysicsCollisionAPI"])
+    {
+        double size = 1
+        token purpose = "guide"
+        float3 xformOp:scale = (0.2, 0.26, 0.14)
+        uniform token[] xformOpOrder = ["xformOp:scale"]
+    }
+
+    def Cylinder "left_handle" (prepend apiSchemas = ["PhysicsCollisionAPI"])
+    {
+        uniform token axis = "Y"
+        double height = 0.11
+        double radius = 0.0155
+        color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+        double3 xformOp:translate = (0.0, 0.2218, 0.045)
+        float3 xformOp:rotateXYZ = (5.14, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+    def Cylinder "left_standoff"
+    {
+        uniform token axis = "Y"
+        double height = 0.0372
+        double radius = 0.01
+        color3f[] primvars:displayColor = [(0.45, 0.45, 0.45)]
+        double3 xformOp:translate = (0.0018, 0.1485, 0.0384)
+        float3 xformOp:rotateXYZ = (5.14, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+
+    def Cylinder "right_handle" (prepend apiSchemas = ["PhysicsCollisionAPI"])
+    {
+        uniform token axis = "Y"
+        double height = 0.11
+        double radius = 0.0155
+        color3f[] primvars:displayColor = [(0.05, 0.05, 0.05)]
+        double3 xformOp:translate = (0.0, -0.2218, 0.045)
+        float3 xformOp:rotateXYZ = (-5.14, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+    def Cylinder "right_standoff"
+    {
+        uniform token axis = "Y"
+        double height = 0.0372
+        double radius = 0.01
+        color3f[] primvars:displayColor = [(0.45, 0.45, 0.45)]
+        double3 xformOp:translate = (0.0018, -0.1485, 0.0384)
+        float3 xformOp:rotateXYZ = (-5.14, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+}

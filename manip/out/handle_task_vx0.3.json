@@ -1,0 +1,7314 @@
+[
+ {
+  "place": "low",
+  "seed": 0,
+  "pick_table_top": 0.7791527262487707,
+  "approach_box_shift": 1.0674092586445845e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.22135493269314,
+   58.692154586687295
+  ],
+  "lift_sag": 0.0028196972466129067,
+  "walked_m": 3.4135821960990866,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.015,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 58.96,
+    "right": 58.58,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.01,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.01,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.01,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.2074182697257333e-06,
+  "place_table_force": 0.9810000000000015,
+  "place_table_top": 0.6858171393677027,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.43285004995468296,
+  "pitch_absmax": 2.5371231498160594,
+  "pitch_walk": 0.7284759803016629
+ },
+ {
+  "place": "low",
+  "seed": 1,
+  "pick_table_top": 0.7798510867529993,
+  "approach_box_shift": 1.0674092586447056e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.60606981178552,
+   58.933539237676044
+  ],
+  "lift_sag": 0.0109468178907145,
+  "walked_m": 3.615319091096935,
+  "place_settle_s": 0.66,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.022,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.97,
+    "right": 58.46,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.014,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.014,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.014,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.078324659199975e-06,
+  "place_table_force": 0.981000000000001,
+  "place_table_top": 0.6865554260641306,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4634301971604007,
+  "pitch_absmax": 3.4024674948480778,
+  "pitch_walk": 0.7036738168552041
+ },
+ {
+  "place": "low",
+  "seed": 2,
+  "pick_table_top": 0.781972841698642,
+  "approach_box_shift": 0.005077772544313571,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.4870154468636,
+   60.25280398553287
+  ],
+  "lift_sag": 0.020138451454289275,
+  "walked_m": 3.2383387761984563,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.021,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": 0.007,
+    "left": 58.76,
+    "right": 58.75,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.02,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.02,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.02,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.6849510359408828,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4631436585274127,
+  "pitch_absmax": 2.791799097412631,
+  "pitch_walk": 0.5721525861933792
+ },
+ {
+  "place": "low",
+  "seed": 3,
+  "pick_table_top": 0.781208191764351,
+  "approach_box_shift": 1.0674092587555723e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.94019032280855,
+   59.0396263667631
+  ],
+  "lift_sag": 0.008418424271624758,
+  "walked_m": 3.7930299524177093,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.019,
+     0.03,
+     0.0
+    ],
+    "box_bottom_above_top": 0.002,
+    "left": 59.12,
+    "right": 58.53,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.017,
+     0.02,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.017,
+     0.02,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.017,
+     0.02,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.4148365394514667e-06,
+  "place_table_force": 0.981,
+  "place_table_top": 0.6847056919030449,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5929589322048506,
+  "pitch_absmax": 3.9407161685590193,
+  "pitch_walk": 0.9945818709134238
+ },
+ {
+  "place": "low",
+  "seed": 4,
+  "pick_table_top": 0.7811233719076673,
+  "approach_box_shift": 1.0674092585336825e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.06417521601492,
+   58.95206429687746
+  ],
+  "lift_sag": 0.0113628976688116,
+  "walked_m": 3.4300739884876217,
+  "place_settle_s": 1.1,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.021,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.01,
+    "right": 58.46,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.022,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.022,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.022,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000004,
+  "place_table_top": 0.6856714860142364,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4643440153373545,
+  "pitch_absmax": 2.7711458111232434,
+  "pitch_walk": 0.7957369208448847
+ },
+ {
+  "place": "low",
+  "seed": 5,
+  "pick_table_top": 0.7819220286905888,
+  "approach_box_shift": 0.004411367556112091,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99855047738673,
+   59.24504514896033
+  ],
+  "lift_sag": 0.013481944709020532,
+  "walked_m": 3.210405716688832,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.005,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 58.86,
+    "right": 58.3,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.004,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.004,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.004,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.6860685560693098,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.35672842518088066,
+  "pitch_absmax": 5.039947297036388,
+  "pitch_walk": 0.7067904291020287
+ },
+ {
+  "place": "low",
+  "seed": 6,
+  "pick_table_top": 0.7793295385506498,
+  "approach_box_shift": 1.0674092584224124e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.97946798525416,
+   59.16238975952899
+  ],
+  "lift_sag": 0.010368257965865713,
+  "walked_m": 3.6258133010425926,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.027,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.02,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.029,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.029,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.029,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.6856149557406068,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.47153486762585867,
+  "pitch_absmax": 3.906832251176187,
+  "pitch_walk": 0.8638610723434522
+ },
+ {
+  "place": "low",
+  "seed": 7,
+  "pick_table_top": 0.7801997013661288,
+  "approach_box_shift": 1.0674092586446845e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00177243599022,
+   59.194357456828385
+  ],
+  "lift_sag": 0.008048278201463921,
+  "walked_m": 3.5360714628873287,
+  "place_settle_s": 0.9,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.006,
+     -0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.03,
+    "right": 58.45,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000034,
+  "place_table_top": 0.6833661462770457,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.6092131976025129,
+  "pitch_absmax": 3.1727536513498498,
+  "pitch_walk": 1.0295353089447903
+ },
+ {
+  "place": "low",
+  "seed": 8,
+  "pick_table_top": 0.781510423563853,
+  "approach_box_shift": 0.008999486027116232,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.92437728422941,
+   59.314919321241355
+  ],
+  "lift_sag": 0.020157477229157172,
+  "walked_m": 3.459389330587428,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.023,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 58.92,
+    "right": 58.78,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.023,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.023,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.023,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000012,
+  "place_table_top": 0.6861600248854441,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5229764869744746,
+  "pitch_absmax": 3.435658777520513,
+  "pitch_walk": 0.8646743469675202
+ },
+ {
+  "place": "low",
+  "seed": 9,
+  "pick_table_top": 0.7819771747223772,
+  "approach_box_shift": 1.0674092586444545e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00066485940431,
+   59.237612179294274
+  ],
+  "lift_sag": 0.006302474079983744,
+  "walked_m": 3.3087686085762016,
+  "place_settle_s": 0.8,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.019,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 59.1,
+    "right": 58.44,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.017,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.017,
+     -0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.017,
+     -0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.831646840510158e-06,
+  "place_table_force": 0.9810000000000013,
+  "place_table_top": 0.6829444323527251,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4722346421769801,
+  "pitch_absmax": 3.5711666040088796,
+  "pitch_walk": 0.5365811649667399
+ },
+ {
+  "place": "low",
+  "seed": 10,
+  "pick_table_top": 0.7814072887668801,
+  "approach_box_shift": 0.0022020524810734497,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00351131249581,
+   58.891010273897095
+  ],
+  "lift_sag": 0.007358536866974297,
+  "walked_m": 3.451810470290777,
+  "place_settle_s": 0.68,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.016,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.87,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.018,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.018,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.018,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.9090959104164224e-06,
+  "place_table_force": 0.9809999999999992,
+  "place_table_top": 0.685064699129858,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5121528393737217,
+  "pitch_absmax": 3.8564098023629576,
+  "pitch_walk": 0.8639492470079468
+ },
+ {
+  "place": "low",
+  "seed": 11,
+  "pick_table_top": 0.7816731226884639,
+  "approach_box_shift": 1.067409258533481e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.90013487153077,
+   59.28803721793828
+  ],
+  "lift_sag": 0.012320167355023837,
+  "walked_m": 3.2875515466149774,
+  "place_settle_s": 0.86,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.025,
+     -0.013,
+     0.0
+    ],
+    "box_bottom_above_top": 0.01,
+    "left": 58.98,
+    "right": 58.46,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.025,
+     -0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.025,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.025,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.2074182697257333e-06,
+  "place_table_force": 0.9810000000000012,
+  "place_table_top": 0.6832642704747066,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4485998433581762,
+  "pitch_absmax": 2.3870201446778254,
+  "pitch_walk": 0.6776655947302893
+ },
+ {
+  "place": "low",
+  "seed": 12,
+  "pick_table_top": 0.7818613179525191,
+  "approach_box_shift": 0.005016741084794468,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.48365858064689,
+   59.078674903944304
+  ],
+  "lift_sag": 0.011861139684518407,
+  "walked_m": 1.6373712116543087,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "low",
+  "seed": 13,
+  "pick_table_top": 0.7819608358808645,
+  "approach_box_shift": 0.007321949029137654,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.0024597131314,
+   59.18105846873314
+  ],
+  "lift_sag": 0.01459977601192819,
+  "walked_m": 3.6399675210209206,
+  "place_settle_s": 0.62,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.018,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": 0.002,
+    "left": 59.0,
+    "right": 58.54,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.015,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.015,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.015,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.6856341807347185,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.569353120384177,
+  "pitch_absmax": 3.4586562002151693,
+  "pitch_walk": 0.9768517671595296
+ },
+ {
+  "place": "low",
+  "seed": 14,
+  "pick_table_top": 0.7817547347016489,
+  "approach_box_shift": 1.8592617745329934e-05,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.997374674263924,
+   59.42243878785938
+  ],
+  "lift_sag": 0.016654090771256347,
+  "walked_m": 3.338500349487736,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.01,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.002,
+    "left": 59.34,
+    "right": 58.24,
+    "table": 0.29,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.01,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.01,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.01,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.68507441870551,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5251342377737777,
+  "pitch_absmax": 3.6739012624079654,
+  "pitch_walk": 0.749512794918141
+ },
+ {
+  "place": "low",
+  "seed": 15,
+  "pick_table_top": 0.7804968042306462,
+  "approach_box_shift": 1.067409258533446e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.66300892141508,
+   58.858787337333936
+  ],
+  "lift_sag": 0.010744096383490054,
+  "walked_m": 3.431059301325711,
+  "place_settle_s": 0.96,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.042,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.36,
+    "right": 58.58,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.034,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.034,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.034,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.6845722535206544,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4777932182158506,
+  "pitch_absmax": 3.1833120971217514,
+  "pitch_walk": 0.7078982453997803
+ },
+ {
+  "place": "low",
+  "seed": 16,
+  "pick_table_top": 0.7796174559479501,
+  "approach_box_shift": 1.0674092586445038e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.06545280888546,
+   59.255099618166966
+  ],
+  "lift_sag": 0.010927164313842663,
+  "walked_m": 1.257149084214587,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "low",
+  "seed": 17,
+  "pick_table_top": 0.7813352595128888,
+  "approach_box_shift": 1.0674092585336029e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99924105376943,
+   59.081570372967775
+  ],
+  "lift_sag": 0.008037287162557027,
+  "walked_m": 3.3853178451062305,
+  "place_settle_s": 0.9400000000000001,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.014,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.09,
+    "right": 58.42,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.016,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.016,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.016,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.6855048794505386,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5251420726061229,
+  "pitch_absmax": 2.580046111106418,
+  "pitch_walk": 0.7433459449614124
+ },
+ {
+  "place": "low",
+  "seed": 18,
+  "pick_table_top": 0.7805153945052667,
+  "approach_box_shift": 1.0674092585335546e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.648136372933564,
+   59.17306953348112
+  ],
+  "lift_sag": 0.012832853365862373,
+  "walked_m": 3.240989238471411,
+  "place_settle_s": 0.9,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.014,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.38,
+    "right": 58.42,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.004,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.685727067433256,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5580532226256235,
+  "pitch_absmax": 3.705647446970874,
+  "pitch_walk": 0.6342238290427632
+ },
+ {
+  "place": "low",
+  "seed": 19,
+  "pick_table_top": 0.780483004143125,
+  "approach_box_shift": 1.0674092586443757e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00880770282697,
+   59.910927142395444
+  ],
+  "lift_sag": 0.018856378032315435,
+  "walked_m": 3.5376395211189755,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.027,
+     0.027,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 59.08,
+    "right": 58.31,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.023,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.023,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.023,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.6856211268301429,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.6630467713158934,
+  "pitch_absmax": 3.3568052432544793,
+  "pitch_walk": 0.8313951428801479
+ },
+ {
+  "place": "midlow",
+  "seed": 1000,
+  "pick_table_top": 0.7799914583593077,
+  "approach_box_shift": 1.0674092585334896e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.112645834894984,
+   58.56432159381649
+  ],
+  "lift_sag": 0.01029672345040955,
+  "walked_m": 3.366647355171121,
+  "place_settle_s": 1.22,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.02,
+     0.014,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 58.79,
+    "right": 58.58,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.022,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.022,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.022,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.7217770406852323,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.48668074671619777,
+  "pitch_absmax": 2.9052202532331157,
+  "pitch_walk": 0.6925013776653209
+ },
+ {
+  "place": "midlow",
+  "seed": 1001,
+  "pick_table_top": 0.7804784800259206,
+  "approach_box_shift": 1.06740925853336e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.58005677891916,
+   58.97267848816032
+  ],
+  "lift_sag": 0.010729741228892364,
+  "walked_m": 3.346616187283023,
+  "place_settle_s": 1.03,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.011,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.58,
+    "right": 58.82,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.006,
+     -0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.006,
+     -0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.006,
+     -0.007,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.7205951515647325,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5232683421676484,
+  "pitch_absmax": 2.716822068298355,
+  "pitch_walk": 0.7997988539948903
+ },
+ {
+  "place": "midlow",
+  "seed": 1002,
+  "pick_table_top": 0.7817372265772589,
+  "approach_box_shift": 1.06740925853362e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.226101334221696,
+   59.27280150422099
+  ],
+  "lift_sag": 0.022349734504247154,
+  "walked_m": 3.3012201554653657,
+  "place_settle_s": 1.17,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.027,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": 0.009,
+    "left": 58.94,
+    "right": 58.54,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.028,
+     -0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.027,
+     -0.032,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.027,
+     -0.032,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 8.537736462515939e-07,
+  "place_table_force": 0.9810000000000016,
+  "place_table_top": 0.7188935446403438,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.44684615070881717,
+  "pitch_absmax": 4.113420056199827,
+  "pitch_walk": 0.6429557358932352
+ },
+ {
+  "place": "midlow",
+  "seed": 1003,
+  "pick_table_top": 0.7816877789852243,
+  "approach_box_shift": 0.005620843175125347,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.39266287222351,
+   58.993835383581754
+  ],
+  "lift_sag": 0.005308526402927227,
+  "walked_m": 3.5918848205350926,
+  "place_settle_s": 1.06,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.014,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.11,
+    "right": 58.42,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.012,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.012,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.012,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.2588727439225506e-06,
+  "place_table_force": 0.9809999999999995,
+  "place_table_top": 0.7214602695493609,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5976084465428274,
+  "pitch_absmax": 3.130701867858667,
+  "pitch_walk": 0.9664647455180543
+ },
+ {
+  "place": "midlow",
+  "seed": 1004,
+  "pick_table_top": 0.7812801872785726,
+  "approach_box_shift": 1.0674092585332981e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.01892039681098,
+   59.46753035100821
+  ],
+  "lift_sag": 0.010932667590904943,
+  "walked_m": 3.349718768560302,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.007,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 59.14,
+    "right": 58.55,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.7219782793196565,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3261531175763937,
+  "pitch_absmax": 4.3656433184908785,
+  "pitch_walk": 0.6944747423505842
+ },
+ {
+  "place": "midlow",
+  "seed": 1005,
+  "pick_table_top": 0.7816787783026182,
+  "approach_box_shift": 0.007575692945610537,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.998782220291616,
+   59.41230780061495
+  ],
+  "lift_sag": 0.011857440069482417,
+  "walked_m": 3.51062881553701,
+  "place_settle_s": 1.0,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.001,
+     0.025,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.35,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.001,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.001,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.001,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.7213990996602839,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5559296333037265,
+  "pitch_absmax": 3.7182584112532395,
+  "pitch_walk": 0.8246511260053896
+ },
+ {
+  "place": "midlow",
+  "seed": 1006,
+  "pick_table_top": 0.7813990043209991,
+  "approach_box_shift": 0.006729392497432172,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.16986919963914,
+   58.87638979384998
+  ],
+  "lift_sag": 0.010387806953091383,
+  "walked_m": 3.5714166680138293,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.024,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 58.96,
+    "right": 58.66,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.022,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.022,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.022,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.7221610429722112,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4728208069006146,
+  "pitch_absmax": 3.2566016478739064,
+  "pitch_walk": 0.9729541014277612
+ },
+ {
+  "place": "midlow",
+  "seed": 1007,
+  "pick_table_top": 0.7818540609381599,
+  "approach_box_shift": 1.067409258422805e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00192598638918,
+   59.45502405287023
+  ],
+  "lift_sag": 0.013652697599439434,
+  "walked_m": 3.478365636273899,
+  "place_settle_s": 0.52,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.01,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.2,
+    "right": 58.45,
+    "table": 1.44,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.003,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.003,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.003,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.091309789151873e-06,
+  "place_table_force": 0.9809999999999997,
+  "place_table_top": 0.7218662736561807,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5284921576415863,
+  "pitch_absmax": 4.022386806571289,
+  "pitch_walk": 0.7958694802385475
+ },
+ {
+  "place": "midlow",
+  "seed": 1008,
+  "pick_table_top": 0.7824563705292542,
+  "approach_box_shift": 1.067409258533537e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.3702676896,
+   59.00460309233614
+  ],
+  "lift_sag": 0.007215545618087349,
+  "walked_m": 3.422759398746763,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.02,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.002,
+    "left": 58.82,
+    "right": 58.54,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.017,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.017,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.017,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.7218686993847897,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4828504186132176,
+  "pitch_absmax": 3.4458025705683824,
+  "pitch_walk": 0.7838281716694449
+ },
+ {
+  "place": "midlow",
+  "seed": 1009,
+  "pick_table_top": 0.7811073740642611,
+  "approach_box_shift": 1.0674092585334252e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.13735306173155,
+   58.61054236582681
+  ],
+  "lift_sag": 0.009744893943420263,
+  "walked_m": 3.5663607645628135,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.023,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.79,
+    "right": 58.41,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.027,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.027,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.027,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.6222548091772e-06,
+  "place_table_force": 0.981000000000001,
+  "place_table_top": 0.7216424283669188,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5134184679359237,
+  "pitch_absmax": 4.617094706550201,
+  "pitch_walk": 0.8346080641062995
+ },
+ {
+  "place": "midlow",
+  "seed": 1010,
+  "pick_table_top": 0.782114895909926,
+  "approach_box_shift": 7.419974682751967e-05,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.998921146597205,
+   59.29291605508266
+  ],
+  "lift_sag": 0.015969556122785722,
+  "walked_m": 3.2375833622503576,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.019,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 58.99,
+    "right": 58.33,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.022,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.022,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.022,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.699869328381916e-06,
+  "place_table_force": 0.9810000000000008,
+  "place_table_top": 0.7202484448643882,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5028447763344039,
+  "pitch_absmax": 2.512172785016506,
+  "pitch_walk": 0.649582170123445
+ },
+ {
+  "place": "midlow",
+  "seed": 1011,
+  "pick_table_top": 0.7813540144089344,
+  "approach_box_shift": 1.0674092586445106e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.51609564831711,
+   59.003645315641336
+  ],
+  "lift_sag": 0.004549646648863703,
+  "walked_m": 3.5858144229137627,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.0,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 58.81,
+    "right": 58.43,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.9809999999999992,
+  "place_table_top": 0.7213834106045098,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5480797263075916,
+  "pitch_absmax": 3.6811652962542554,
+  "pitch_walk": 0.9048752540850666
+ },
+ {
+  "place": "midlow",
+  "seed": 1012,
+  "pick_table_top": 0.7815312239029153,
+  "approach_box_shift": 0.0046670000408019306,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.693844095088494,
+   59.283838473450935
+  ],
+  "lift_sag": 0.019097835258790163,
+  "walked_m": 3.26115269284384,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.018,
+     -0.018,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 59.09,
+    "right": 58.8,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.014,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.078,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.078,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.831646840510158e-06,
+  "place_table_force": 0.9809999999999995,
+  "place_table_top": 0.7191989904080764,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5192095422772113,
+  "pitch_absmax": 2.3277428371475466,
+  "pitch_walk": 0.725501954829147
+ },
+ {
+  "place": "midlow",
+  "seed": 1013,
+  "pick_table_top": 0.7811924417435234,
+  "approach_box_shift": 1.0674092585336166e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00272043556819,
+   59.30609999807915
+  ],
+  "lift_sag": 0.006565938806167515,
+  "walked_m": 3.4638382547787065,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.04,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 58.77,
+    "right": 58.53,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.042,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.042,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.042,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.722731824568635,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5272021565833589,
+  "pitch_absmax": 3.656968590116721,
+  "pitch_walk": 0.8149653930863303
+ },
+ {
+  "place": "midlow",
+  "seed": 1014,
+  "pick_table_top": 0.7803764118145498,
+  "approach_box_shift": 1.0674092585334908e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.91948171848381,
+   59.30682580712219
+  ],
+  "lift_sag": 0.012138607518071942,
+  "walked_m": 1.37634628158897,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "midlow",
+  "seed": 1015,
+  "pick_table_top": 0.781700371990711,
+  "approach_box_shift": 1.0674092584222058e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.348294867230535,
+   59.14926431113362
+  ],
+  "lift_sag": 0.017691314676664183,
+  "walked_m": 3.347970436256196,
+  "place_settle_s": 0.87,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.0,
+     0.02,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 58.88,
+    "right": 58.55,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.009,
+     0.022,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.009,
+     0.022,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.009,
+     0.022,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.7214198071594514,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5780218339825508,
+  "pitch_absmax": 3.4016216527303547,
+  "pitch_walk": 0.801999131241673
+ },
+ {
+  "place": "midlow",
+  "seed": 1016,
+  "pick_table_top": 0.7820307213804805,
+  "approach_box_shift": 0.004817416346810639,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.95495960887216,
+   59.23860742562108
+  ],
+  "lift_sag": 0.015640953517216838,
+  "walked_m": 3.428076900820674,
+  "place_settle_s": 0.62,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.004,
+     -0.012,
+     0.0
+    ],
+    "box_bottom_above_top": 0.007,
+    "left": 59.01,
+    "right": 58.63,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.001,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.001,
+     -0.056,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.001,
+     -0.056,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.4150945850063763e-06,
+  "place_table_force": 0.9809999999999994,
+  "place_table_top": 0.7200354175879108,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4250736120196205,
+  "pitch_absmax": 2.6550375305050142,
+  "pitch_walk": 0.7765816203533991
+ },
+ {
+  "place": "midlow",
+  "seed": 1017,
+  "pick_table_top": 0.7819908670576328,
+  "approach_box_shift": 1.0674092584224372e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.997513605748,
+   59.043559587724616
+  ],
+  "lift_sag": 0.006301652478119424,
+  "walked_m": 3.40264975258065,
+  "place_settle_s": 1.25,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.035,
+     0.031,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.31,
+    "right": 58.24,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.032,
+     0.032,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.032,
+     0.032,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.032,
+     0.032,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.7213600919148798,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5508214131058562,
+  "pitch_absmax": 3.7274884284126033,
+  "pitch_walk": 0.8347450812371248
+ },
+ {
+  "place": "midlow",
+  "seed": 1018,
+  "pick_table_top": 0.780372949884234,
+  "approach_box_shift": 1.0674092586442957e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.27133549057742,
+   58.53628483342042
+  ],
+  "lift_sag": 0.011682800709954089,
+  "walked_m": 2.0941902575381537,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "midlow",
+  "seed": 1019,
+  "pick_table_top": 0.7824220155087411,
+  "approach_box_shift": 1.0674092584225924e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99802282357574,
+   59.41080145828873
+  ],
+  "lift_sag": 0.010130685569275322,
+  "walked_m": 3.222151042113836,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.005,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.002,
+    "left": 59.25,
+    "right": 59.01,
+    "table": 0.7,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.01,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.009,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.009,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.7200034129663341,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5542812279300368,
+  "pitch_absmax": 2.886488593095612,
+  "pitch_walk": 0.7194146899043811
+ },
+ {
+  "place": "carry",
+  "seed": 2000,
+  "pick_table_top": 0.779014760146516,
+  "approach_box_shift": 1.0674092585336016e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.17641210630707,
+   58.72337215953756
+  ],
+  "lift_sag": 0.0076778335825223865,
+  "walked_m": 3.1709831112860103,
+  "place_settle_s": 0.5700000000000001,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.002,
+     -0.02,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.84,
+    "right": 58.53,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.011,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.011,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.011,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999998,
+  "place_table_top": 0.7626890738792031,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5529601474124904,
+  "pitch_absmax": 3.465702021920408,
+  "pitch_walk": 0.7290063235539929
+ },
+ {
+  "place": "carry",
+  "seed": 2001,
+  "pick_table_top": 0.7812867931005887,
+  "approach_box_shift": 1.067409258422555e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   57.62778848241817,
+   58.746170187973576
+  ],
+  "lift_sag": 0.012815213029078953,
+  "walked_m": 3.5656138420419814,
+  "place_settle_s": 0.56,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.023,
+     0.02,
+     0.0
+    ],
+    "box_bottom_above_top": 0.01,
+    "left": 58.95,
+    "right": 58.65,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.023,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.023,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.023,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.763665228705694,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5293106467779163,
+  "pitch_absmax": 3.6966058115406852,
+  "pitch_walk": 0.9221633162926072
+ },
+ {
+  "place": "carry",
+  "seed": 2002,
+  "pick_table_top": 0.7814989514321611,
+  "approach_box_shift": 1.067409258644634e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.63110339904074,
+   58.85334339154015
+  ],
+  "lift_sag": 0.016815610214718002,
+  "walked_m": 3.4111405889962803,
+  "place_settle_s": 0.54,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.005,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 59.16,
+    "right": 58.7,
+    "table": 1.3,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.007,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.007,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.007,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.52019892386405e-06,
+  "place_table_force": 0.9810000000000012,
+  "place_table_top": 0.7633322106034381,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5443044088451401,
+  "pitch_absmax": 2.7207466108732827,
+  "pitch_walk": 0.9403993261585505
+ },
+ {
+  "place": "carry",
+  "seed": 2003,
+  "pick_table_top": 0.7826060768615728,
+  "approach_box_shift": 0.004043075073168976,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.998996020810765,
+   59.58107605649313
+  ],
+  "lift_sag": 0.017009705798590624,
+  "walked_m": 3.4833239358094557,
+  "place_settle_s": 0.63,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.011,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 58.85,
+    "right": 58.67,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.01,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.01,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.01,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 8.537736462515939e-07,
+  "place_table_force": 0.9809999999999993,
+  "place_table_top": 0.7636181207451731,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4547472993733828,
+  "pitch_absmax": 3.6665302976253806,
+  "pitch_walk": 0.7750891889054158
+ },
+ {
+  "place": "carry",
+  "seed": 2004,
+  "pick_table_top": 0.7808477020269409,
+  "approach_box_shift": 1.0674092586444306e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.669764536647854,
+   59.00274778138862
+  ],
+  "lift_sag": 0.01520462102259279,
+  "walked_m": 3.3287612228172208,
+  "place_settle_s": 0.5700000000000001,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.011,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.02,
+    "right": 58.42,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.013,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.013,
+     0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.013,
+     0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.306651113363206e-06,
+  "place_table_force": 0.9809999999999992,
+  "place_table_top": 0.7633354922118534,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5510886368787421,
+  "pitch_absmax": 3.4161521950767058,
+  "pitch_walk": 0.86530750442866
+ },
+ {
+  "place": "carry",
+  "seed": 2005,
+  "pick_table_top": 0.7813949569227165,
+  "approach_box_shift": 1.0674092586443986e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00004153400321,
+   59.14362508768233
+  ],
+  "lift_sag": 0.019582093172385684,
+  "walked_m": 3.3545341135099767,
+  "place_settle_s": 0.87,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.031,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.11,
+    "right": 58.31,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.029,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.03,
+     -0.022,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.03,
+     -0.022,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.9810000000000019,
+  "place_table_top": 0.7623382395266345,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.6069063744611161,
+  "pitch_absmax": 3.7671636683453964,
+  "pitch_walk": 0.8646817173395916
+ },
+ {
+  "place": "carry",
+  "seed": 2006,
+  "pick_table_top": 0.7815352650761971,
+  "approach_box_shift": 1.0674092585333316e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.000605481206456,
+   59.18652946200247
+  ],
+  "lift_sag": 0.006543444122399711,
+  "walked_m": 3.470051433360113,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.004,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.22,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.008,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.008,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.008,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.762997650222274,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.36523218801580304,
+  "pitch_absmax": 3.656277117541676,
+  "pitch_walk": 0.7305746982561513
+ },
+ {
+  "place": "carry",
+  "seed": 2007,
+  "pick_table_top": 0.7813474283513329,
+  "approach_box_shift": 0.0063724786396385045,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.96327396768731,
+   59.13407989871136
+  ],
+  "lift_sag": 0.015505035024134028,
+  "walked_m": 3.670321510520078,
+  "place_settle_s": 1.43,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.013,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 59.3,
+    "right": 58.65,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.017,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.017,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.017,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.7620589968782314,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.6231148765645764,
+  "pitch_absmax": 4.017461835161456,
+  "pitch_walk": 1.061372573840742
+ },
+ {
+  "place": "carry",
+  "seed": 2008,
+  "pick_table_top": 0.7819868266534886,
+  "approach_box_shift": 0.006203762836192597,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.001622176088425,
+   59.115995664354365
+  ],
+  "lift_sag": 0.019515935666343798,
+  "walked_m": 3.4461849082700624,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": false
+  },
+  "fell": false,
+  "box_lost": true
+ },
+ {
+  "place": "carry",
+  "seed": 2009,
+  "pick_table_top": 0.7822291142509656,
+  "approach_box_shift": 1.0674092585337395e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.710878204062,
+   58.99721972654338
+  ],
+  "lift_sag": 0.013400541806060762,
+  "walked_m": 3.5974862369676726,
+  "place_settle_s": 0.52,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.005,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.08,
+    "right": 58.51,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.005,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.005,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.005,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.1945284701301985e-06,
+  "place_table_force": 0.9809999999999994,
+  "place_table_top": 0.7628909439524867,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5282673822848324,
+  "pitch_absmax": 3.418959747220347,
+  "pitch_walk": 0.9088092966827728
+ },
+ {
+  "place": "carry",
+  "seed": 2010,
+  "pick_table_top": 0.7821283137476955,
+  "approach_box_shift": 1.0674092585334968e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.67294572287424,
+   59.05551598251545
+  ],
+  "lift_sag": 0.01787991430468039,
+  "walked_m": 3.6330695416280423,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.001,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.01,
+    "left": 59.2,
+    "right": 58.54,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.005,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.001,
+     -0.041,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.001,
+     -0.041,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.7610324790751035,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.454713253173655,
+  "pitch_absmax": 3.3504024695612022,
+  "pitch_walk": 0.9463433391721288
+ },
+ {
+  "place": "carry",
+  "seed": 2011,
+  "pick_table_top": 0.7815974669482464,
+  "approach_box_shift": 0.00610506871692909,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.01029726198952,
+   59.2614173086683
+  ],
+  "lift_sag": 0.011983446734576297,
+  "walked_m": 3.6416224741388663,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": false
+  },
+  "fell": false,
+  "box_lost": false
+ },
+ {
+  "place": "carry",
+  "seed": 2012,
+  "pick_table_top": 0.7826459549956988,
+  "approach_box_shift": 0.0052785036637371194,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.8695791476966,
+   59.444268920458455
+  ],
+  "lift_sag": 0.014648088052704789,
+  "walked_m": 3.527690415747986,
+  "place_settle_s": 0.63,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.003,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 59.09,
+    "right": 58.58,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.004,
+     0.028,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.004,
+     0.028,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.004,
+     0.028,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.9575586669421963e-06,
+  "place_table_force": 0.981000000000001,
+  "place_table_top": 0.7623771297939821,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3867478816553286,
+  "pitch_absmax": 3.1438071319856027,
+  "pitch_walk": 0.7744751594978558
+ },
+ {
+  "place": "carry",
+  "seed": 2013,
+  "pick_table_top": 0.781925048059865,
+  "approach_box_shift": 1.0674092585335379e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.45847532604874,
+   58.939555116523124
+  ],
+  "lift_sag": 0.010654163350418022,
+  "walked_m": 3.2634635655823816,
+  "place_settle_s": 1.25,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.007,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 59.31,
+    "right": 58.68,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.006,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.2588727439225506e-06,
+  "place_table_force": 0.981,
+  "place_table_top": 0.7638979308258942,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3988364628170722,
+  "pitch_absmax": 3.6189045189376747,
+  "pitch_walk": 0.7132564023496308
+ },
+ {
+  "place": "carry",
+  "seed": 2014,
+  "pick_table_top": 0.7811801958899718,
+  "approach_box_shift": 1.067409258533393e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00192687810414,
+   59.167657672147854
+  ],
+  "lift_sag": 0.011842279255163457,
+  "walked_m": 3.2737016220465516,
+  "place_settle_s": 0.56,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.002,
+     -0.014,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 59.09,
+    "right": 58.68,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.002,
+     -0.026,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.002,
+     -0.026,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.002,
+     -0.026,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999998,
+  "place_table_top": 0.7636160304688802,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": -0.0230228753022041,
+  "pitch_absmax": 11.298575444865975,
+  "pitch_walk": 0.7236280363855564
+ },
+ {
+  "place": "carry",
+  "seed": 2015,
+  "pick_table_top": 0.7809792063450454,
+  "approach_box_shift": 1.067409258533504e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.68310941472061,
+   59.10801757729199
+  ],
+  "lift_sag": 0.012621762244217072,
+  "walked_m": 1.8380410169607457,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "carry",
+  "seed": 2016,
+  "pick_table_top": 0.7809579299452407,
+  "approach_box_shift": 0.007513837278245063,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99935261425454,
+   59.209805582441405
+  ],
+  "lift_sag": 0.01591685064346926,
+  "walked_m": 3.5198190615256677,
+  "place_settle_s": 1.07,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.007,
+     -0.005,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 58.98,
+    "right": 58.24,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.017,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.017,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.017,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.7639805972424314,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.42303403949377355,
+  "pitch_absmax": 3.5538933579376297,
+  "pitch_walk": 0.880396120421447
+ },
+ {
+  "place": "carry",
+  "seed": 2017,
+  "pick_table_top": 0.781283056999774,
+  "approach_box_shift": 1.0674092585334642e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.68792287743767,
+   58.77094405063524
+  ],
+  "lift_sag": 0.01613437901164605,
+  "walked_m": 3.3154147140629533,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.001,
+    "left": 59.4,
+    "right": 58.53,
+    "table": 0.63,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.008,
+     -0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.008,
+     -0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.008,
+     -0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.7641657319507775,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4687845489015046,
+  "pitch_absmax": 2.998988880081437,
+  "pitch_walk": 0.7182206583438424
+ },
+ {
+  "place": "carry",
+  "seed": 2018,
+  "pick_table_top": 0.7813131066657031,
+  "approach_box_shift": 0.007455040785262523,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.074465768108304,
+   59.06182154258562
+  ],
+  "lift_sag": 0.01805525883034631,
+  "walked_m": 3.445764571303761,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.013,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 58.68,
+    "right": 58.64,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.091309789151873e-06,
+  "place_table_force": 0.9809999999999993,
+  "place_table_top": 0.7639897798681634,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.46030680335059665,
+  "pitch_absmax": 4.222365690511699,
+  "pitch_walk": 0.9605423225599693
+ },
+ {
+  "place": "carry",
+  "seed": 2019,
+  "pick_table_top": 0.7818079409904315,
+  "approach_box_shift": 0.0063513819754302085,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99737894908631,
+   59.31789438547236
+  ],
+  "lift_sag": 0.005142670260197213,
+  "walked_m": 3.433791969332974,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.006,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.24,
+    "right": 58.64,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.007,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.007,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.007,
+     0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000012,
+  "place_table_top": 0.7632078938304103,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.23911316303338295,
+  "pitch_absmax": 11.152806238583489,
+  "pitch_walk": 0.8697984922467286
+ },
+ {
+  "place": "midhigh",
+  "seed": 3000,
+  "pick_table_top": 0.7796810430943297,
+  "approach_box_shift": 1.0674092585333822e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.55622950023678,
+   58.921071723829456
+  ],
+  "lift_sag": 0.013326280677005586,
+  "walked_m": 3.5525715570384846,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.002,
+     0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.27,
+    "right": 58.77,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.005,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.005,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.005,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.9090959104164224e-06,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.8102117901435453,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3793311117202039,
+  "pitch_absmax": 2.893676581330972,
+  "pitch_walk": 0.8235234167490689
+ },
+ {
+  "place": "midhigh",
+  "seed": 3001,
+  "pick_table_top": 0.7817643158740553,
+  "approach_box_shift": 1.067409258644639e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99878191582054,
+   59.54351862592781
+  ],
+  "lift_sag": 0.009907260998732292,
+  "walked_m": 3.5726830699257697,
+  "place_settle_s": 0.97,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.007,
+     -0.005,
+     0.0
+    ],
+    "box_bottom_above_top": 0.011,
+    "left": 58.97,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.009,
+     -0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.091309789151873e-06,
+  "place_table_force": 0.9809999999999992,
+  "place_table_top": 0.8081813229631669,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4786172822457722,
+  "pitch_absmax": 3.3037897991110654,
+  "pitch_walk": 0.9656212497228059
+ },
+ {
+  "place": "midhigh",
+  "seed": 3002,
+  "pick_table_top": 0.7820673586390645,
+  "approach_box_shift": 0.0007473519449179835,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.68387106163405,
+   59.10846612702413
+  ],
+  "lift_sag": 0.012993329357598338,
+  "walked_m": 3.422278854346113,
+  "place_settle_s": 0.51,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.002,
+     0.022,
+     0.0
+    ],
+    "box_bottom_above_top": 0.016,
+    "left": 59.45,
+    "right": 58.66,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.003,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.005,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.005,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 8.537736462515939e-07,
+  "place_table_force": 0.9810000000000014,
+  "place_table_top": 0.8065870227274079,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.6001989887643244,
+  "pitch_absmax": 3.9838129659502304,
+  "pitch_walk": 1.0222894051236737
+ },
+ {
+  "place": "midhigh",
+  "seed": 3003,
+  "pick_table_top": 0.7815478495330996,
+  "approach_box_shift": 1.0674092585333295e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00462226440044,
+   59.52092672676295
+  ],
+  "lift_sag": 0.011676381756076881,
+  "walked_m": 3.373101503713245,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "midhigh",
+  "seed": 3004,
+  "pick_table_top": 0.7818657160604803,
+  "approach_box_shift": 1.0674092585334906e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   61.09872519752999,
+   59.62213626302579
+  ],
+  "lift_sag": 0.011671276995274593,
+  "walked_m": 3.428195814767508,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.014,
+     -0.023,
+     0.0
+    ],
+    "box_bottom_above_top": 0.011,
+    "left": 59.21,
+    "right": 58.41,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.012,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.8077729315334978,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5049895764916521,
+  "pitch_absmax": 3.3444926023618433,
+  "pitch_walk": 0.9143109690543244
+ },
+ {
+  "place": "midhigh",
+  "seed": 3005,
+  "pick_table_top": 0.7821961983387462,
+  "approach_box_shift": 0.00598860559835219,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.441440570386504,
+   59.48100229067889
+  ],
+  "lift_sag": 0.01039851268203229,
+  "walked_m": 3.476566356537781,
+  "place_settle_s": 0.71,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.017,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.06,
+    "right": 58.64,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.016,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.017,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.017,
+     -0.001,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.4787793334710982e-06,
+  "place_table_force": 0.9810000000000203,
+  "place_table_top": 0.8089172959503366,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5335241061666612,
+  "pitch_absmax": 4.2978161482910044,
+  "pitch_walk": 0.8923155403404732
+ },
+ {
+  "place": "midhigh",
+  "seed": 3006,
+  "pick_table_top": 0.7822829613985278,
+  "approach_box_shift": 0.007680653186931939,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.997319812227786,
+   59.22392954922233
+  ],
+  "lift_sag": 0.0073045077295318395,
+  "walked_m": 3.5020556230482147,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.007,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": 0.003,
+    "left": 59.14,
+    "right": 58.45,
+    "table": 1.5,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.006,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.006,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.006,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.981,
+  "place_table_top": 0.8074918641773612,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.484702194960571,
+  "pitch_absmax": 2.9918447643083956,
+  "pitch_walk": 0.8355495454344909
+ },
+ {
+  "place": "midhigh",
+  "seed": 3007,
+  "pick_table_top": 0.7800976133071478,
+  "approach_box_shift": 1.0674092587555232e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.22937970298482,
+   58.60282674469519
+  ],
+  "lift_sag": 0.009842815709524388,
+  "walked_m": 3.740660453430044,
+  "place_settle_s": 1.36,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.003,
+     0.016,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 58.92,
+    "right": 58.46,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.002,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.002,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.002,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999994,
+  "place_table_top": 0.8091690120836761,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4942609601693855,
+  "pitch_absmax": 3.2376519621265696,
+  "pitch_walk": 1.1019459206372477
+ },
+ {
+  "place": "midhigh",
+  "seed": 3008,
+  "pick_table_top": 0.7816445299144519,
+  "approach_box_shift": 0.006020121038466658,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99922655622432,
+   59.39811649915501
+  ],
+  "lift_sag": 0.01751460870106991,
+  "walked_m": 3.360220209007868,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.009,
+     0.004,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 58.91,
+    "right": 58.51,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 3.6222548091772e-06,
+  "place_table_force": 0.9809999999999994,
+  "place_table_top": 0.8081621953925029,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.41768308096665213,
+  "pitch_absmax": 3.0519105698076836,
+  "pitch_walk": 0.8240711321899024
+ },
+ {
+  "place": "midhigh",
+  "seed": 3009,
+  "pick_table_top": 0.7816049763297694,
+  "approach_box_shift": 1.0674092585334275e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99678160540577,
+   59.50053194034969
+  ],
+  "lift_sag": 0.009347714715783995,
+  "walked_m": 3.066480807510652,
+  "place_settle_s": 0.96,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.018,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 58.95,
+    "right": 58.51,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     0.014,
+     -0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     0.014,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     0.014,
+     -0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.9575586669421963e-06,
+  "place_table_force": 0.9810000000000271,
+  "place_table_top": 0.8071814085314006,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.40734662612943906,
+  "pitch_absmax": 2.571807190437221,
+  "pitch_walk": 0.6638497731122666
+ },
+ {
+  "place": "midhigh",
+  "seed": 3010,
+  "pick_table_top": 0.7816972161734506,
+  "approach_box_shift": 0.004346577841448391,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.40918466219007,
+   59.13919445667148
+  ],
+  "lift_sag": 0.01045036206293204,
+  "walked_m": 3.401403443710914,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.003,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.08,
+    "right": 58.39,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.003,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.8092905794735168,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3354052719046017,
+  "pitch_absmax": 3.706712064365749,
+  "pitch_walk": 0.8370856647901633
+ },
+ {
+  "place": "midhigh",
+  "seed": 3011,
+  "pick_table_top": 0.78152440897993,
+  "approach_box_shift": 1.0674092585335364e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.35348523246264,
+   59.15826156949685
+  ],
+  "lift_sag": 0.013374157463510006,
+  "walked_m": 3.413634985187328,
+  "place_settle_s": 0.74,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.006,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.28,
+    "right": 58.42,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.005,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.005,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.005,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.699869328381916e-06,
+  "place_table_force": 0.9810000000000014,
+  "place_table_top": 0.8089038923327914,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3609163895116749,
+  "pitch_absmax": 2.7132165183193897,
+  "pitch_walk": 0.9180012288687363
+ },
+ {
+  "place": "midhigh",
+  "seed": 3012,
+  "pick_table_top": 0.7822695703815665,
+  "approach_box_shift": 0.006131156135624282,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.29363881908421,
+   59.4038859403252
+  ],
+  "lift_sag": 0.011195674679103207,
+  "walked_m": 3.4767141160034507,
+  "place_settle_s": 1.99,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.008,
+     0.016,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.93,
+    "right": 58.57,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.006,
+     0.021,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.981,
+  "place_table_top": 0.8095827950505792,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3023852953377019,
+  "pitch_absmax": 4.577776518727065,
+  "pitch_walk": 0.8794607852187947
+ },
+ {
+  "place": "midhigh",
+  "seed": 3013,
+  "pick_table_top": 0.7805404513832046,
+  "approach_box_shift": 0.005095933250925598,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   58.992498087447345,
+   58.760506457851655
+  ],
+  "lift_sag": 0.01286047095753684,
+  "walked_m": 3.348602348284176,
+  "place_settle_s": 1.26,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.012,
+     0.013,
+     0.0
+    ],
+    "box_bottom_above_top": 0.004,
+    "left": 59.1,
+    "right": 58.06,
+    "table": 1.22,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.004,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.004,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.004,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999997,
+  "place_table_top": 0.8098459027645313,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.19723800750528472,
+  "pitch_absmax": 7.830112153352017,
+  "pitch_walk": 0.8206565593648837
+ },
+ {
+  "place": "midhigh",
+  "seed": 3014,
+  "pick_table_top": 0.7802616533253028,
+  "approach_box_shift": 1.0674092586444964e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   58.849490422715064,
+   58.53983493646835
+  ],
+  "lift_sag": 0.009588772527349354,
+  "walked_m": 3.3646914816989364,
+  "place_settle_s": 0.55,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     0.0,
+     0.016,
+     0.0
+    ],
+    "box_bottom_above_top": 0.013,
+    "left": 59.01,
+    "right": 58.67,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.0,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.0,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.0,
+     0.005,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.809614707398411,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3485964993174292,
+  "pitch_absmax": 2.717722543318251,
+  "pitch_walk": 0.6760311300805134
+ },
+ {
+  "place": "midhigh",
+  "seed": 3015,
+  "pick_table_top": 0.7820527851618566,
+  "approach_box_shift": 0.007953732153932145,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00053927634343,
+   59.4639900889811
+  ],
+  "lift_sag": 0.012988990802358602,
+  "walked_m": 3.321643874859084,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.008,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 59.02,
+    "right": 57.81,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.004,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.004,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.004,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.2074182697257333e-06,
+  "place_table_force": 0.9810000000000011,
+  "place_table_top": 0.8094487446742409,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3034867237091636,
+  "pitch_absmax": 4.672281818369625,
+  "pitch_walk": 0.8450259437992128
+ },
+ {
+  "place": "midhigh",
+  "seed": 3016,
+  "pick_table_top": 0.7819505803767717,
+  "approach_box_shift": 1.0674092586446402e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.000642450219736,
+   59.114637066067246
+  ],
+  "lift_sag": 0.010748838581131293,
+  "walked_m": 3.576039238741733,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.025,
+     0.019,
+     0.0
+    ],
+    "box_bottom_above_top": 0.007,
+    "left": 58.99,
+    "right": 58.5,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.02,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.02,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.02,
+     0.023,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.4787793334710982e-06,
+  "place_table_force": 0.981,
+  "place_table_top": 0.8102770078335686,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4080499146814195,
+  "pitch_absmax": 2.7469322336685775,
+  "pitch_walk": 0.8442862849087247
+ },
+ {
+  "place": "midhigh",
+  "seed": 3017,
+  "pick_table_top": 0.7819609921959298,
+  "approach_box_shift": 1.0674092585335328e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.72185344019988,
+   59.20988523031787
+  ],
+  "lift_sag": 0.009875800941452795,
+  "walked_m": 1.5200793442416214,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "midhigh",
+  "seed": 3018,
+  "pick_table_top": 0.7806497922060691,
+  "approach_box_shift": 1.0674092586444632e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.94371778719104,
+   59.40283400870345
+  ],
+  "lift_sag": 0.012698999270890021,
+  "walked_m": 2.519523955579603,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "midhigh",
+  "seed": 3019,
+  "pick_table_top": 0.780281871146725,
+  "approach_box_shift": 1.067409258644605e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.25287573938564,
+   58.70781611461338
+  ],
+  "lift_sag": 0.019364110869725892,
+  "walked_m": 3.779984015389658,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.019,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.19,
+    "right": 58.36,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.012,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.015,
+     -0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.015,
+     -0.008,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.8086067978145639,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5157953441159352,
+  "pitch_absmax": 4.544293932907551,
+  "pitch_walk": 1.0210831914062743
+ },
+ {
+  "place": "high",
+  "seed": 4000,
+  "pick_table_top": 0.7800686650351867,
+  "approach_box_shift": 1.0674092585334896e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   58.739227258347356,
+   58.51034326289298
+  ],
+  "lift_sag": 0.008992938408426965,
+  "walked_m": 3.3887945442391403,
+  "place_settle_s": 0.7000000000000001,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.065,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": 0.011,
+    "left": 58.96,
+    "right": 59.31,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.063,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.063,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.063,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.8583198230759136,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.44249097141100097,
+  "pitch_absmax": 2.6392289184176914,
+  "pitch_walk": 0.686897395146018
+ },
+ {
+  "place": "high",
+  "seed": 4001,
+  "pick_table_top": 0.7815304137693897,
+  "approach_box_shift": 1.0674092586446146e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.022228320853,
+   59.73561334008196
+  ],
+  "lift_sag": -0.0011417979373383735,
+  "walked_m": 3.2462030099462136,
+  "place_settle_s": 0.66,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.062,
+     -0.004,
+     0.0
+    ],
+    "box_bottom_above_top": 0.009,
+    "left": 59.03,
+    "right": 59.09,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.068,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.068,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.068,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000003,
+  "place_table_top": 0.859082381025575,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.32003673219275264,
+  "pitch_absmax": 3.565778747667077,
+  "pitch_walk": 0.7770433004281821
+ },
+ {
+  "place": "high",
+  "seed": 4002,
+  "pick_table_top": 0.779885407546768,
+  "approach_box_shift": 1.0674092585335525e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.59438049809104,
+   58.95002113162595
+  ],
+  "lift_sag": 0.00877656904521007,
+  "walked_m": 3.3929904332267573,
+  "place_settle_s": 1.61,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.057,
+     0.017,
+     0.0
+    ],
+    "box_bottom_above_top": 0.01,
+    "left": 58.89,
+    "right": 58.51,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.061,
+     0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.063,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.063,
+     -0.0,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.8573767340915209,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.39400494481354287,
+  "pitch_absmax": 2.7363584800205345,
+  "pitch_walk": 0.6800489914128256
+ },
+ {
+  "place": "high",
+  "seed": 4003,
+  "pick_table_top": 0.7815576717120927,
+  "approach_box_shift": 0.008599205585061562,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.49195856412297,
+   59.5088270345368
+  ],
+  "lift_sag": 0.007067768488700499,
+  "walked_m": 3.784198630991652,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.047,
+     0.011,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.23,
+    "right": 57.46,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.044,
+     0.01,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.048,
+     -0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.048,
+     -0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.699869328381916e-06,
+  "place_table_force": 0.9809999999999994,
+  "place_table_top": 0.8569560435669145,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.5759515287839074,
+  "pitch_absmax": 5.859589219842615,
+  "pitch_walk": 1.1370152272998097
+ },
+ {
+  "place": "high",
+  "seed": 4004,
+  "pick_table_top": 0.7815853239749075,
+  "approach_box_shift": 1.0674092586444771e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.996819661137685,
+   59.205731419925286
+  ],
+  "lift_sag": 0.009474328604173632,
+  "walked_m": 3.4258871091061547,
+  "place_settle_s": 2.15,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.043,
+     -0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.005,
+    "left": 59.17,
+    "right": 58.53,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.04,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.04,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.04,
+     -0.019,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.4148365394514667e-06,
+  "place_table_force": 0.9809999999999997,
+  "place_table_top": 0.8588675169627967,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.36821746668027455,
+  "pitch_absmax": 3.681390968426281,
+  "pitch_walk": 0.8011475383355516
+ },
+ {
+  "place": "high",
+  "seed": 4005,
+  "pick_table_top": 0.7817604232795956,
+  "approach_box_shift": 1.0674092586445703e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00048320442389,
+   59.45301355057585
+  ],
+  "lift_sag": 0.0073950875229624735,
+  "walked_m": 1.8276953606588193,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "high",
+  "seed": 4006,
+  "pick_table_top": 0.7808173455708558,
+  "approach_box_shift": 0.005694645294025971,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.65530364233827,
+   59.02571999269497
+  ],
+  "lift_sag": 0.01214492649629817,
+  "walked_m": 3.3689382639839227,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.072,
+     -0.007,
+     0.0
+    ],
+    "box_bottom_above_top": 0.009,
+    "left": 58.92,
+    "right": 58.43,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.08,
+     -0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.08,
+     -0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.08,
+     -0.011,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.2074182697257333e-06,
+  "place_table_force": 0.9810000000000009,
+  "place_table_top": 0.8584469576028612,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4323480269993346,
+  "pitch_absmax": 3.7585110886587088,
+  "pitch_walk": 0.8359082774245201
+ },
+ {
+  "place": "high",
+  "seed": 4007,
+  "pick_table_top": 0.7817890304276729,
+  "approach_box_shift": 1.0674092585335084e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.005517706705895,
+   59.80903560630457
+  ],
+  "lift_sag": 0.0164479937066333,
+  "walked_m": 1.74579095378722,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "high",
+  "seed": 4008,
+  "pick_table_top": 0.7824563961330382,
+  "approach_box_shift": 1.067409258533522e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.0054942159564,
+   59.429931984411475
+  ],
+  "lift_sag": 0.009863209627651859,
+  "walked_m": 1.7131355578900043,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "high",
+  "seed": 4009,
+  "pick_table_top": 0.7815621900341896,
+  "approach_box_shift": 1.0674092586445417e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00118727835067,
+   59.38874509444065
+  ],
+  "lift_sag": 0.013345504004503739,
+  "walked_m": 3.564790662160459,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "high",
+  "seed": 4010,
+  "pick_table_top": 0.7824544859564979,
+  "approach_box_shift": 1.067409258533471e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.00097175283213,
+   59.66046845359604
+  ],
+  "lift_sag": 0.008314483777011383,
+  "walked_m": 3.249885345824028,
+  "place_settle_s": 1.1300000000000001,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.057,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.01,
+    "left": 59.03,
+    "right": 58.71,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.056,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.056,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.056,
+     0.024,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.091309789151873e-06,
+  "place_table_force": 0.9810000000000009,
+  "place_table_top": 0.8583189106664335,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.4089727668086193,
+  "pitch_absmax": 3.197765953368574,
+  "pitch_walk": 0.7322445331883967
+ },
+ {
+  "place": "high",
+  "seed": 4011,
+  "pick_table_top": 0.7817847937052196,
+  "approach_box_shift": 0.005847157287796114,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.776251114490975,
+   58.99944792407916
+  ],
+  "lift_sag": 0.006004740074117998,
+  "walked_m": 3.447067592153178,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.068,
+     -0.023,
+     0.0
+    ],
+    "box_bottom_above_top": 0.013,
+    "left": 59.11,
+    "right": 58.48,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.065,
+     -0.012,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.066,
+     -0.031,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.066,
+     -0.031,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.4148365394514667e-06,
+  "place_table_force": 0.9809999999999979,
+  "place_table_top": 0.8572108194910718,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.440544120700829,
+  "pitch_absmax": 4.044773833579648,
+  "pitch_walk": 0.9432427076469376
+ },
+ {
+  "place": "high",
+  "seed": 4012,
+  "pick_table_top": 0.7813816630669514,
+  "approach_box_shift": 0.006955276663666084,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.98700880117604,
+   59.27933952803149
+  ],
+  "lift_sag": 0.008968685802621112,
+  "walked_m": 3.362677949048307,
+  "place_settle_s": 1.16,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.054,
+     0.001,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.9,
+    "right": 57.76,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.056,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.056,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.056,
+     -0.002,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.8592729183882077,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3597930716203676,
+  "pitch_absmax": 3.9719620273884506,
+  "pitch_walk": 0.765911264875361
+ },
+ {
+  "place": "high",
+  "seed": 4013,
+  "pick_table_top": 0.780900432895979,
+  "approach_box_shift": 1.0674092585335616e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.0006660917731,
+   59.406839188603364
+  ],
+  "lift_sag": 0.01056218957039412,
+  "walked_m": 3.267841528282514,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.063,
+     0.008,
+     0.0
+    ],
+    "box_bottom_above_top": 0.008,
+    "left": 59.07,
+    "right": 58.8,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.059,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.059,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.059,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9809999999999999,
+  "place_table_top": 0.858662851952493,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3750189030984239,
+  "pitch_absmax": 2.7156053858855667,
+  "pitch_walk": 0.7857431450613758
+ },
+ {
+  "place": "high",
+  "seed": 4014,
+  "pick_table_top": 0.781695600536557,
+  "approach_box_shift": 1.0674092586446538e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.952908878541464,
+   59.50205278262322
+  ],
+  "lift_sag": 0.010720204531196154,
+  "walked_m": 3.4334094346151547,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.074,
+     0.006,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.29,
+    "right": 57.15,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.063,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.063,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.063,
+     0.009,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 8.537736462515939e-07,
+  "place_table_force": 0.9810000000000013,
+  "place_table_top": 0.8592131372352373,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.40577479233489205,
+  "pitch_absmax": 3.462021566962952,
+  "pitch_walk": 0.8267180671884378
+ },
+ {
+  "place": "high",
+  "seed": 4015,
+  "pick_table_top": 0.780980274819242,
+  "approach_box_shift": 1.067409258533295e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.995088664548696,
+   59.16820667866954
+  ],
+  "lift_sag": 0.012148599274474092,
+  "walked_m": 3.7194633196157993,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": true,
+  "box_lost": false
+ },
+ {
+  "place": "high",
+  "seed": 4016,
+  "pick_table_top": 0.7821693373605043,
+  "approach_box_shift": 1.0674092585335506e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99985611604622,
+   59.3754980943209
+  ],
+  "lift_sag": 0.015230388671999107,
+  "walked_m": 3.6038690569575658,
+  "place_settle_s": 1.72,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.074,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": 0.007,
+    "left": 58.98,
+    "right": 57.88,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.07,
+     0.014,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.07,
+     0.014,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.07,
+     0.014,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 0.0,
+  "place_table_force": 0.9810000000000002,
+  "place_table_top": 0.8593072931716692,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.47385377153352176,
+  "pitch_absmax": 2.7715617074078205,
+  "pitch_walk": 0.7304624342149145
+ },
+ {
+  "place": "high",
+  "seed": 4017,
+  "pick_table_top": 0.7824188061515978,
+  "approach_box_shift": 1.0674092585336226e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   60.105848505031126,
+   59.35467213294365
+  ],
+  "lift_sag": 0.01248886400782967,
+  "walked_m": 3.076917809625645,
+  "place_settle_s": 1.01,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.042,
+     0.018,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 58.87,
+    "right": 58.28,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.044,
+     0.034,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.044,
+     0.034,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.044,
+     0.034,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 1.7075472925031877e-06,
+  "place_table_force": 0.9810000000000199,
+  "place_table_top": 0.8586852962531073,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3802222919826198,
+  "pitch_absmax": 2.5018000492416608,
+  "pitch_walk": 0.6815835434580004
+ },
+ {
+  "place": "high",
+  "seed": 4018,
+  "pick_table_top": 0.7804799996827663,
+  "approach_box_shift": 1.067409258644458e-06,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.50787504519279,
+   59.617525320822544
+  ],
+  "lift_sag": 0.014277896045562843,
+  "walked_m": 3.4365007146645117,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": false
+  },
+  "fell": false,
+  "box_lost": true
+ },
+ {
+  "place": "high",
+  "seed": 4019,
+  "pick_table_top": 0.7816675674471969,
+  "approach_box_shift": 0.007736476453333175,
+  "approach_robot_contact": 0.0,
+  "grip_force": [
+   59.99548095487715,
+   59.11631044505321
+  ],
+  "lift_sag": 0.007206062599041108,
+  "walked_m": 3.218411272299742,
+  "place_settle_s": 0.5,
+  "place_trace": {
+   "lowered": {
+    "box_off_table_xy": [
+     -0.051,
+     0.003,
+     0.0
+    ],
+    "box_bottom_above_top": 0.006,
+    "left": 59.05,
+    "right": 58.04,
+    "table": 0.0,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "opened": {
+    "box_off_table_xy": [
+     -0.057,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "stepped_back": {
+    "box_off_table_xy": [
+     -0.057,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   },
+   "arms_down": {
+    "box_off_table_xy": [
+     -0.057,
+     0.015,
+     0.0
+    ],
+    "box_bottom_above_top": -0.0,
+    "left": 0.0,
+    "right": 0.0,
+    "table": 0.98,
+    "robot_other": 0.0,
+    "floor": 0.0
+   }
+  },
+  "place_tilt": 2.699869328381916e-06,
+  "place_table_force": 0.9810000000000001,
+  "place_table_top": 0.8578519148576409,
+  "stages": {
+   "approach": true,
+   "grasp": true,
+   "lift": true,
+   "walk": true,
+   "turn": true,
+   "place": true
+  },
+  "fell": false,
+  "pitch_mean": 0.3928143067967994,
+  "pitch_absmax": 2.5156142515047524,
+  "pitch_walk": 0.7647056032486768
+ }
+]

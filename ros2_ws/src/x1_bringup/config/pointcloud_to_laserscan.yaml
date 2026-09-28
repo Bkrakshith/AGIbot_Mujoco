@@ -1,0 +1,19 @@
+# Head lidar cloud -> 2D scan for slam_toolbox, AMCL and the Nav2 costmaps.
+# base_link is the pelvis (~0.60 m above the floor), so the band
+# -0.45 .. +0.90 m keeps obstacles 0.15-1.5 m above the floor.
+# range_min 0.65 m (measured in base_link) drops the robot's own arms and a
+# carried box.
+pointcloud_to_laserscan:
+  ros__parameters:
+    use_sim_time: true
+    target_frame: base_link
+    transform_tolerance: 0.2
+    min_height: -0.45
+    max_height: 0.90
+    angle_min: -3.14159
+    angle_max: 3.14159
+    angle_increment: 0.0087       # 0.5 deg
+    scan_time: 0.1
+    range_min: 0.65
+    range_max: 20.0
+    use_inf: true

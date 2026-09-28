@@ -9,11 +9,13 @@ or from inside an Isaac Sim window you already have open: Window > Script
 Editor > File > Open this file > Run. Running it again rebuilds the scene.
 
 Options (terminal only): --env USD (another environment), --spawn X Y YAW,
---obs_noise (full trained sensor noise), --test (headless self-test: stands,
-walks forward for 6 s, exits 0 if the robot walked and never fell).
+--obs_noise (full trained sensor noise), --no_office_collision (keep the
+office's own colliders, see office_collision.py), --test (headless self-test:
+stands, walks forward for 6 s, exits 0 if the robot walked and never fell).
 
 The script creates a new stage, saves it as deploy/isaac/scenes/x1_office.usda
-(office environment + X1 + physics scene), presses Play and runs the policy
+(office environment with static colliders on walls, doors and furniture + X1 +
+physics scene), presses Play and runs the policy
 in policy/student.onnx with the controller in x1_controller.py.
 
 Keys (hold to move; the command ramps smoothly and stays inside the range
@@ -26,6 +28,8 @@ the policy was trained on):
   P                push the torso (40 N for 0.2 s, random direction)
   R                reset the robot to the start position
   C                follow camera on / off
+  G                grippers close / open (with --task)
+  B                put the box back on the pickup table (with --task)
 Click once inside the viewport first so it receives the keys.
 
 Speed: the window advances 1/60 s of simulation per rendered frame. With the
@@ -50,11 +54,18 @@ if not IN_KIT:                                # started with python.sh: open our
     ap.add_argument("--env", default=None, help="environment USD (default: the Isaac Office)")
     ap.add_argument("--spawn", type=float, nargs=3, default=None, metavar=("X", "Y", "YAW"))
     ap.add_argument("--obs_noise", action="store_true", help="full trained sensor noise")
+    ap.add_argument("--no_office_collision", action="store_true",
+                    help="leave the office colliders as shipped (see office_collision.py)")
+    ap.add_argument("--ros", action="store_true",
+                    help="ROS 2: sensors, odom, tf, joint states; drive with /cmd_vel (see x1_ros.py)")
+    ap.add_argument("--task", action="store_true",
+                    help="box pick-and-place props: pickup table, handle box, grippers (x1_task.py)")
+    ap.add_argument("--headless", action="store_true", help="no window (e.g. ROS-driven runs)")
     ap.add_argument("--test", action="store_true", help="headless self-test, then exit")
     ARGS = ap.parse_args()
     from isaacsim import SimulationApp
 
-    simulation_app = SimulationApp({"headless": ARGS.test})
+    simulation_app = SimulationApp({"headless": ARGS.test or ARGS.headless})
 
 import carb  # noqa: E402
 import carb.input  # noqa: E402
@@ -95,16 +106,25 @@ SCENE = os.path.join(ISAAC_DIR, "scenes", "x1_office.usda")
 LOG = os.path.join(ISAAC_DIR, "..", "..", "outputs", "logs", "isaac_teleop.log")
 SPAWN_XY, SPAWN_YAW = (-17.5, 30.5), 0.0     # open floor in the Office, ~4.8 m from any object
 OBS_NOISE = False                           # True = full trained sensor noise
+OFFICE_COLLISION = True                     # static colliders on walls, doors, furniture
+ROS = False                                 # ROS 2 interface (x1_ros.py)
+TASK = False                                # pickup table, handle box and grasping (x1_task.py)
 if ARGS is not None:
     if ARGS.spawn:
         SPAWN_XY, SPAWN_YAW = tuple(ARGS.spawn[:2]), ARGS.spawn[2]
     OBS_NOISE = ARGS.obs_noise
+    OFFICE_COLLISION = not ARGS.no_office_collision
+    ROS = ARGS.ros
+    TASK = ARGS.task
 
 if ISAAC_DIR not in sys.path:
     sys.path.insert(0, ISAAC_DIR)
+import office_collision  # noqa: E402
 import x1_controller  # noqa: E402
 
 importlib.reload(x1_controller)
+importlib.reload(office_collision)
+from office_collision import add_office_collision  # noqa: E402
 from x1_controller import ARM_POSES, X1Controller, X1Policy, arms  # noqa: E402
 
 K = carb.input.KeyboardInput
@@ -143,6 +163,7 @@ class Teleop:
         self.reset_request, self.follow = False, True
         self.cam_yaw = SPAWN_YAW
         self.ctl = None
+        self.ros = self.lidar = None
         self.cb_id = self.key_sub = self.tl_sub = None
         self.falls, self.fell_at = 0, None
 
@@ -170,6 +191,16 @@ class Teleop:
         pm.CreateStaticFrictionAttr(1.0)
         pm.CreateDynamicFrictionAttr(1.0)
         pm.CreateRestitutionAttr(0.0)
+        if TASK:
+            import x1_task
+            importlib.reload(x1_task)
+            from isaacsim.storage.native import get_assets_root_path
+            x1_task.add_task_props(stage, get_assets_root_path(), mat)
+            x1_task.add_gripper_visuals(stage)
+        if OFFICE_COLLISION:
+            c = add_office_collision(stage, "/World/Office", mat)
+            log(f"office collision: {c['none']} triangle-mesh + {c['convexHull']} convex-hull objects, "
+                f"none on {c['off']} small/flat items ({c['overridden']} instances overridden)")
         n_col = 0
         for prim in stage.Traverse():
             path = prim.GetPath().pathString
@@ -216,6 +247,20 @@ class Teleop:
                      if p.GetPath().pathString.startswith("/World/X1") and p.GetName() == "torso_link")
         self.torso = RigidPrim(torso)
         self.ctl = X1Controller(self.robot, self.policy)
+        self.grasp = None
+        if TASK:
+            import x1_task
+            self.grasp = x1_task.Grasp(stage)
+        self.ros = self.lidar = None
+        if ROS:
+            import omni.kit.app as _app
+            _app.get_app().get_extension_manager().set_extension_enabled_immediate("isaacsim.ros2.bridge", True)
+            import x1_ros
+            importlib.reload(x1_ros)
+            pelvis = next(p.GetPath().pathString for p in stage.Traverse()
+                          if p.GetPath().pathString.startswith("/World/X1") and p.GetName() == "pelvis")
+            self.lidar, self.cam_path = x1_ros.create_sensors(stage, pelvis)
+            self.ros = x1_ros.RosBridge(self.policy.joints, list(ARM_POSES))
         self.cb_id = SimulationManager.register_callback(self.on_physics_step, IsaacEvents.POST_PHYSICS_STEP)
         inp = carb.input.acquire_input_interface()
         self.keyboard = omni.appwindow.get_default_app_window().get_keyboard()
@@ -226,6 +271,12 @@ class Teleop:
             .create_subscription_to_pop_by_type(int(omni.timeline.TimelineEventType.STOP), self.on_stop)
         self.set_camera(snap=True)
         omni.timeline.get_timeline_interface().play()
+        if self.ros is not None:
+            for _ in range(5):
+                await omni.kit.app.get_app().next_update_async()
+            import x1_ros
+            self.lidar_sensor = x1_ros.start_sensor_publishers(self.lidar, self.cam_path)
+            log("ROS 2: publishing /clock /odom /tf /joint_states /mid360/points /d435/*, listening on /cmd_vel /x1/arm_pose")
         log("playing - click the viewport, then use the arrow keys (see x1_office_teleop.py)")
 
     def on_stop(self, event):
@@ -234,6 +285,9 @@ class Teleop:
 
     def stop(self):
         self.tl_sub = None
+        if getattr(self, "ros", None) is not None:
+            self.ros.shutdown()
+            self.ros = None
         omni.timeline.get_timeline_interface().stop()
         if self.cb_id is not None:
             SimulationManager.deregister_callback(self.cb_id)
@@ -263,6 +317,11 @@ class Teleop:
                 log(f"push {np.round(self.push_force, 1).tolist()} N")
             elif k == K.R:
                 self.reset_request = True
+            elif k == K.G and self.grasp is not None:
+                self.set_gripper(not self.grasp.closed)
+            elif k == K.B and self.grasp is not None:
+                self.grasp.reset()
+                log("box back on the pickup table")
             elif k == K.C:
                 self.follow = not self.follow
                 log(f"follow camera {'on' if self.follow else 'off'}")
@@ -271,6 +330,8 @@ class Teleop:
         return True
 
     def desired_cmd(self):
+        if self.ros is not None and self.ros.active_cmd() is not None:
+            return self.policy.clip_cmd(self.ros.active_cmd())     # /cmd_vel wins over keys
         c = np.zeros(3)
         for k in self.held:
             c += MOVE_KEYS[k]
@@ -305,6 +366,8 @@ class Teleop:
             ctl.t += dt                                   # wait 1 s on the floor, then reset
             return
         pdt = self.policy.dt
+        if self.ros is not None and ctl.k % self.policy.decim == 0:
+            self.ros_step()
         if ctl.k % self.policy.decim == 0:                # command/arm updates at policy rate
             step = ACC * pdt * self.policy.decim
             self.cmd += np.clip(self.desired_cmd() - self.cmd, -step, step)
@@ -316,10 +379,41 @@ class Teleop:
             self.fell_at = ctl.t
             log(f"fell (#{self.falls}) at t={ctl.t:.1f}s - resetting in 1 s")
             return
+        if self.grasp is not None:
+            self.grasp.step()
         if ctl.t < self.push_until:
             self.torso.apply_forces(self.push_force[None])
         if ctl.k % 10 == 0 and self.follow:
             self.set_camera()
+
+    def ros_step(self):
+        """100 Hz: take ROS commands, publish state at 50 Hz."""
+        ros = self.ros
+        ros.spin_once()
+        if ros.arm_request is not None:
+            req, ros.arm_request = ros.arm_request, None
+            target = arms(req) if isinstance(req, str) else np.asarray(req, float)
+            self.arm_from, self.arm_to, self.arm_t = self.arm_now.copy(), target, 0.0
+            log(f"arms -> {req if isinstance(req, str) else np.round(target, 2).tolist()} (ROS)")
+        if ros.gripper_request is not None and self.grasp is not None:
+            close, ros.gripper_request = ros.gripper_request, None
+            self.set_gripper(close)
+        if self.ctl.k % (2 * self.policy.decim) == 0:
+            q, qd, *_ = self.ctl.state()
+            lin, ang = self.robot.get_velocities()
+            box = self.grasp.box_pose() if self.grasp is not None else None
+            ros.publish(SimulationManager.get_simulation_time(), self.ctl.pos, self.ctl.R,
+                        lin.numpy()[0], ang.numpy()[0], q, qd, box=box,
+                        grasped=self.grasp.held if self.grasp is not None else None,
+                        tcps=self.grasp.tcps()[0] if self.grasp is not None else None)
+
+    def set_gripper(self, close):
+        if close:
+            held, (el, er) = self.grasp.close()
+            log(f"grippers closed: {'box held' if held else 'missed'} (handles {el*100:.1f} / {er*100:.1f} cm)")
+        else:
+            self.grasp.open()
+            log("grippers opened")
 
     def do_reset(self):
         self.reset_request = False

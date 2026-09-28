@@ -1,0 +1,125 @@
+# Isaac Sim Office (Isaac/Environments/Office/office.usd referenced at /World/Office).
+# Metres, Z up, world frame of x1_office_teleop.py; the floor is z = 0.
+# Heights and free spots were measured with PhysX rays / overlap boxes on the
+# colliders from office_collision.py. Boxes are axis aligned [min, max].
+# stand: floor spot for the robot base, [x, y, yaw] (yaw = heading, rad),
+# checked free for a 0.56 x 0.56 m footprint, facing the surface.
+# place: centre of the box footprint on the surface, [x, y, z_surface].
+
+robot_spawn: [-17.5, 30.5, 0.0]          # open floor in the hall
+
+reception_desks:
+  reception_main:                        # lobby reception (the one with the city clocks)
+    prims:
+      - /World/Office/SM_ReceptionTableStraight4_460     # east counter, y [0, 2]
+      - /World/Office/SM_ReceptionTableStraight5         # east counter, y [-2, 0]
+      - /World/Office/SM_ReceptionTableStraight2_451     # west counter
+      - /World/Office/SM_ReceptionTableStraight3_452
+      - /World/Office/SM_ReceptionTableCornerOutside3_453
+      - /World/Office/SM_ReceptionTableCornerOutside4_454
+      - /World/Office/SM_ReceptionTableCornerOutside5
+      - /World/Office/SM_ReceptionTableCornerOutside6
+      - /World/Office/SM_Reception_148                   # 3 m back wall in the middle
+      - /World/Office/SM_Reception2
+    bbox: [[-7.76, -4.34, 0.0], [-1.79, 4.34, 3.0]]
+    # two U-shaped counters back to back; visitors stand outside (east / west)
+    top_counter: 1.118                   # visitor ledge, ~0.33 m deep (east: x -2.12..-1.79)
+    top_desk: 0.738                      # receptionist desk behind it (east: x -2.65..-2.15)
+    place: [-2.00, -1.0, 1.118]          # on the east ledge (box overhangs it), no monitor behind
+    stand: [-1.30, -1.0, 3.1416]         # east of the counter, facing -x
+    stand_alt: [-1.34, 0.0, 3.1416]
+  reception_north:                       # smaller L-shaped counter in the hall, 6 m from the spawn
+    prims:
+      - /World/Office/SM_ReceptionTableStraight_215      # x -12.97..-12.11, y 24.1..26.1
+      - /World/Office/SM_ReceptionTableCornerOutside_218
+      - /World/Office/SM_ReceptionTableCornerOutside2_221
+    bbox: [[-12.97, 24.10, 0.0], [-8.81, 28.18, 1.12]]
+    top_counter: 1.118                   # visitor ledge along the north side, y ~27.6..28.1
+    top_desk: 0.738                      # desk behind it, y ~26.9..27.6
+    place: [-11.90, 27.85, 1.118]
+    stand: [-11.90, 28.70, -1.5708]      # north of the counter, facing -y
+    stand_alt: [-13.42, 26.14, 0.0]      # west side, facing +x
+
+meeting_tables:
+  meeting_east_table:                    # meeting room east, long table with 8 chairs
+    room: meeting_east
+    prims: [/World/Office/SM_TableB2, /World/Office/SM_TableB_490]
+    bbox: [[2.55, 37.33, 0.0], [3.35, 42.93, 0.75]]
+    top: 0.75                            # laptop on it near (2.8, 40.7)
+    place: [2.95, 37.90, 0.75]
+    stand: [2.95, 36.85, 1.5708]         # south end, facing +y (both long sides have chairs)
+    stand_alt: [2.95, 43.40, -1.5708]
+  conference_table:                      # conference room, 2.5 x 7.5 m round-cornered table
+    room: conference
+    prims:
+      - /World/Office/SM_TableRound_module2
+      - /World/Office/SM_TableRound_module3
+      - /World/Office/SM_TableRound_module4
+      - /World/Office/SM_TableRound_module5
+      - /World/Office/SM_TableRound_module6
+      - /World/Office/SM_TableRound_module7
+      - /World/Office/SM_TableRound_module8
+      - /World/Office/SM_TableRound_module_33
+      - /World/Office/SM_TableRound_corner2
+      - /World/Office/SM_TableRound_corner3
+      - /World/Office/SM_TableRound_corner4
+      - /World/Office/SM_TableRound_corner_27
+    bbox: [[1.06, 14.24, 0.0], [3.56, 21.74, 0.75]]
+    top: 0.75
+    place: [1.70, 18.00, 0.75]
+    stand: [0.60, 18.00, 0.0]            # west side, facing +x (no chairs in the way)
+    stand_alt: [2.31, 22.20, -1.5708]
+  meeting_round_table:                   # meeting room 1; its glass door is closed
+    room: meeting_round
+    prims:
+      - /World/Office/SM_TableRound_module9_533
+      - /World/Office/SM_TableRound_module10
+      - /World/Office/SM_TableRound_corner5_527
+      - /World/Office/SM_TableRound_corner6
+      - /World/Office/SM_TableRound_corner7
+      - /World/Office/SM_TableRound_corner8
+    bbox: [[-9.60, 36.67, 0.0], [-5.85, 39.18, 0.75]]
+    top: 0.75
+    place: [-9.20, 37.90, 0.75]
+    stand: [-10.05, 37.90, 0.0]          # west end, facing +x
+  meeting_small_table:                   # meeting room 2; its glass door is closed
+    room: meeting_small
+    prims: [/World/Office/SM_TableB3_325]
+    bbox: [[-7.61, 43.72, 0.0], [-6.80, 46.52, 0.75]]
+    top: 0.75
+    place: [-7.20, 44.20, 0.75]
+    stand: [-7.20, 43.25, 1.5708]        # south end, facing +y
+
+# Rough floor areas [[xmin, ymin], [xmax, ymax]] of the ground storey.
+rooms:
+  lobby: [[-14.9, -11.7], [6.0, 11.7]]           # main reception in the middle
+  corridor: [[-4.9, 12.0], [-1.0, 24.0]]         # lobby -> north wing
+  conference: [[-1.0, 12.1], [6.0, 24.0]]        # glass wall to the corridor at x = -1
+  storage: [[-14.1, 11.7], [-5.1, 24.0]]         # racks, door at (-6.5, 24) closed
+  hall: [[-24.0, 24.1], [-11.0, 51.0]]           # open office + workstations, robot spawn
+  hall_east: [[-11.0, 24.1], [-5.1, 34.5]]       # part of the hall, north reception here
+  east_office: [[-4.9, 24.0], [6.0, 35.5]]       # secretary desks
+  meeting_east: [[-4.9, 35.6], [6.0, 47.9]]
+  meeting_round: [[-11.0, 34.6], [-5.1, 41.4]]
+  meeting_small: [[-11.0, 41.6], [-5.1, 50.9]]
+  north_west: [[-23.0, 51.0], [-11.3, 60.0]]
+  north_east: [[-5.0, 48.0], [6.0, 60.0]]
+  wc: [[-24.0, 14.0], [-18.0, 24.0]]
+
+# Doors on the route between the receptions and the meeting rooms.
+# open: a 1 m high ray through the doorway (centre and +-0.35 m) is not blocked.
+doors:
+  - {prim: /World/Office/BP_DoorGlassDecor_1397, center: [-3.00, 12.0], between: [lobby, corridor], open: true}
+  - {prim: /World/Office/BP_Door_250cm_488, center: [-3.00, 24.0], between: [corridor, east_office], open: true}
+  - {prim: /World/Office/BP_DoorGlass4_305, center: [0.51, 24.0], between: [east_office, conference], open: true}
+  - {prim: /World/Office/BP_DoorD_1190, center: [-5.0, 28.5], between: [hall_east, east_office], open: partly}   # leaf swung ~70 deg, blocks one ray
+  - {prim: /World/Office/BP_Door_250cm3, center: [-3.00, 35.5], between: [east_office, meeting_east], open: true}
+  - {prim: /World/Office/BP_Door_250cm4, center: [-3.00, 48.0], between: [meeting_east, north_east], open: true}
+  - {prim: /World/Office/BP_Door_250cm2, center: [-15.5, 24.0], between: [hall, wc], open: true}
+  - {prim: /World/Office/BP_DoorGlass_887, center: [-17.0, 51.0], between: [hall, north_west], open: true}
+  - {prim: /World/Office/BP_DoorGlass3, center: [-11.0, 38.0], between: [hall, meeting_round], open: false}
+  - {prim: /World/Office/BP_DoorGlass2, center: [-11.0, 45.0], between: [hall, meeting_small], open: false}
+  - {prim: /World/Office/BP_DoorB_662, center: [-6.5, 24.0], between: [storage, hall_east], open: false}
+
+# Suggested route for the box task (reception_north -> meeting_east_table, ~20 m):
+# hall_east -> BP_DoorD_1190 -> east_office -> BP_Door_250cm3 -> meeting_east.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Fast DDS profile shared by Isaac Sim (bundled Humble libs) and the system
+  ROS 2 Humble install. Forces UDPv4 and disables the built-in shared-memory
+  transport, which is what the Isaac Sim ROS 2 docs recommend: the bundled
+  Fast DDS (2.6.10) and the apt one can differ in version, and SHM discovery
+  between them (or across users/containers) is unreliable.
+
+  Selected via FASTRTPS_DEFAULT_PROFILES_FILE (set by scripts/ros2_env.sh).
+-->
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <transport_descriptors>
+        <transport_descriptor>
+            <transport_id>UdpTransport</transport_id>
+            <type>UDPv4</type>
+        </transport_descriptor>
+    </transport_descriptors>
+
+    <participant profile_name="udp_transport_profile" is_default_profile="true">
+        <rtps>
+            <userTransports>
+                <transport_id>UdpTransport</transport_id>
+            </userTransports>
+            <useBuiltinTransports>false</useBuiltinTransports>
+        </rtps>
+    </participant>
+</profiles>

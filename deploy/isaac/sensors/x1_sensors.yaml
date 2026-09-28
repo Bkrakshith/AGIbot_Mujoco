@@ -1,0 +1,209 @@
+# AgiBot X1 sensor and end-effector frames for the simulation models.
+#
+# Conventions
+#   Units: metres, radians, kg, N.
+#   rpy is fixed-axis roll-pitch-yaw (URDF convention): R = Rz(yaw) Ry(pitch) Rx(roll).
+#   pelvis     = root link (x forward, y left, z up). Same frame as base_link in
+#                assets/x1_vendor/urdf/x1.urdf and x1-body in the vendor MJCF.
+#   torso_link = deploy/isaac/x1_isaac/x1_isaac.urdf, identical to body_pitch in
+#                assets/x1_vendor/mjcf/xyber_x1_serial.xml and lumber_pitch in x1.urdf.
+#                Its axes are rotated: x forward, y UP, z to the robot's RIGHT.
+#                torso_link origin in pelvis = (0.00245, 0.0, 0.15603).
+#
+# How the numbers were obtained
+#   AgiBot publishes the full X1 assembly as a SolidWorks STEP export:
+#     https://github.com/AgibotTech/agibot_x1_hardware
+#     file 智元灵犀X1_20241024/智元灵犀X1_整机STEP_20241024.zip
+#   The assembly contains a part named "D435" (the Intel CAD model), its printed
+#   mount "相机固定架" (camera bracket, part 6DUUGP), and two "姿态传感器" (IMU) parts.
+#   The URDF meshes (base_link + lumber_pitch, all links at zero pose) were
+#   registered to the tessellated STEP with ICP: median residual 2.5-3.4 mm,
+#   rotation within 0.2 deg of the nominal axis swap. Poses below are the STEP
+#   part placements expressed in pelvis / torso_link through that registration.
+#   Expected error from the registration: about +-3 mm, +-0.3 deg.
+#   Later hardware revisions (20250108, 20250307) keep the same bracket part
+#   number in their BOMs, but their full-assembly STEP was not checked.
+
+sources:
+  hardware_repo: https://github.com/AgibotTech/agibot_x1_hardware
+  bom_20241024: "智元灵犀X1_20241024/智元灵犀X1_BOM清单_20241024.xlsx (lists D435 x1, YIS320 x2, OmniPicker via L28 cable x2, i7-13620H mini PC, GL.iNet MT2500A router)"
+  infer_repo: https://github.com/AgibotTech/agibot_x1_infer   # dcu_driver_module config and docs
+  x1_docs: https://www.agibot.com/DOCS/OS                      # "The IMU used by X1 is YIS320"
+  x1_product: https://www.agibot.com/products/X1                # 0.5 kg per arm, OmniPicker 30 N
+  omnipicker: https://openelab.io/products/agibot-omnipicker-object-picking-robot
+  d435: https://www.intelrealsense.com/depth-camera-d435/
+  realsense_urdf: https://github.com/IntelRealSense/realsense-ros/blob/ros2-development/realsense2_description/urdf/_d435.urdf.xacro
+
+# ---------------------------------------------------------------------------
+# Chest depth camera
+# ---------------------------------------------------------------------------
+d435:
+  model: Intel RealSense D435         # BOM says D435, not D435i: no camera IMU
+  source: vendor STEP assembly 20241024 (part "D435"), registered to the URDF
+  confidence: high for position (+-5 mm) and tilt (+-0.5 deg)
+  notes:
+    - Mounted on the centre line of the chest, on a printed bracket that sits
+      under the camera, so the tripod screw is at the bottom (camera upright).
+    - The camera looks straight ahead. There is NO downward tilt in the vendor CAD.
+    - Front glass is 0.0895 m ahead of the pelvis origin, about 17 mm in front of
+      the chest shell. Height is 0.4185 m above the pelvis origin, i.e. about
+      1.03 m above the floor in the 0.613 m "home" stance.
+  parent: torso_link
+
+  # Body of the camera (for a collision/visual box of 0.090 x 0.025 x 0.025 m).
+  body_centre:
+    in_torso_link: {xyz: [0.0745, 0.2625, -0.0002], rpy: [-1.5708, 0.0, 0.0]}
+    in_pelvis:     {xyz: [0.0770, 0.0002, 0.4185], rpy: [0.0, 0.0, 0.0]}
+    size: [0.025, 0.090, 0.025]        # along camera_link x (depth), y (width), z (height)
+    mass: 0.072
+
+  # camera_link = depth origin, ROS convention (x forward, y left, z up).
+  # It is 4.3 mm behind the front glass and 17.5 mm to the camera's left of the
+  # body centre (left IR imager), per the RealSense description package.
+  camera_link:
+    in_torso_link: {xyz: [0.0827, 0.2625, -0.0177], rpy: [-1.5708, 0.0, 0.0]}
+    in_pelvis:     {xyz: [0.0852, 0.0177, 0.4185], rpy: [0.0, 0.0, 0.0]}
+
+  # Depth optical frame (z forward, x right, y down). Same origin as camera_link.
+  depth_optical_frame:
+    in_pelvis:     {xyz: [0.0852, 0.0177, 0.4185], rpy: [-1.5708, 0.0, -1.5708]}
+    in_torso_link: {xyz: [0.0827, 0.2625, -0.0177], rpy: [3.1416, -1.5708, 0.0]}  # gimbal-locked; use the matrix below
+    # rotation (columns = optical x, y, z) expressed in torso_link:
+    rotation_in_torso_link: [[0, 0, 1],
+                             [0, -1, 0],
+                             [1, 0, 0]]
+
+  # RGB module: 15 mm further left than the depth origin.
+  color_optical_frame:
+    in_pelvis:     {xyz: [0.0852, 0.0327, 0.4185], rpy: [-1.5708, 0.0, -1.5708]}
+
+  # MuJoCo <camera> in body_pitch (MuJoCo cameras look along -z, y up):
+  #   <camera name="d435_depth" pos="0.0827 0.2625 -0.0177" xyaxes="0 0 1 0 1 0" fovy="58"/>
+  mujoco_body_pitch: {pos: [0.0827, 0.2625, -0.0177], xyaxes: [0, 0, 1, 0, 1, 0]}
+
+  intrinsics_nominal:
+    depth: {hfov_deg: 87, vfov_deg: 58, width: 848, height: 480, fps: 30, min_z_m: 0.2, useful_range_m: [0.3, 3.0]}
+    color: {hfov_deg: 69, vfov_deg: 42, width: 1280, height: 720, fps: 30}
+
+  # What the vendor pose can see (camera 1.03 m high, 0 deg tilt, 58 deg vertical FOV):
+  #   floor becomes visible only beyond 1.86 m;
+  #   at 0.40 m in front of the chest (hand working range) it sees 0.81-1.25 m high;
+  #   a 0.75 m desk top is visible from 0.51 m out.
+  # With the camera pitched down the floor starts at 1.07 m (15 deg), 0.90 m (20 deg),
+  # 0.75 m (25 deg), 0.62 m (30 deg). If a tilted variant is wanted for manipulation
+  # experiments, 20-25 deg keeps a 0.7-1.1 m desk and the floor 1 m ahead in the same
+  # image. That is an option for simulation, not the stock robot.
+  optional_tilted_variant:
+    pitch_down_deg: 22
+    source: estimate (task-driven), not vendor
+
+# ---------------------------------------------------------------------------
+# IMUs (Yesense YIS320, two fitted, one used)
+# ---------------------------------------------------------------------------
+imu:
+  model: Yesense YIS320 AHRS (serial to a DCU at 921600 baud)
+  source: BOM 20241024 (x2), https://www.agibot.com/DOCS/OS, dcu_x1.yaml in agibot_x1_infer
+  pelvis_imu:
+    used_by_controller: true         # dcu_x1.yaml: imu_dcu_name: hip, hip DCU imu_enable: true
+    parent: pelvis
+    xyz: [0.0001, 0.0, -0.0047]      # STEP part origin; the MJCF "imu" site at 0 0 0 is within 5 mm
+    rpy: [0.0, 0.0, 0.0]             # publish in pelvis axes, as the driver's /imu/data does for the sim
+    cad_part_axes_rpy: [0.0, 0.0, -1.5708]  # orientation of the CAD body only; sensing axes not verified
+    confidence: high for position
+  chest_imu:
+    used_by_controller: false        # arm DCU has imu_enable: false
+    parent: torso_link
+    in_pelvis: {xyz: [0.0026, 0.0005, 0.2787]}
+    in_torso_link: {xyz: [0.0002, 0.1227, -0.0005]}
+    confidence: high for position
+
+# ---------------------------------------------------------------------------
+# Grippers
+# ---------------------------------------------------------------------------
+gripper:
+  model: AgiBot OmniPicker (adaptive, 1 DoF)
+  source: BOM (OmniPicker x2), dcu_x1.yaml (left_claw_joint / right_claw_joint, type OMNI_PICKER)
+  published_specs:                   # https://openelab.io/products/agibot-omnipicker-object-picking-robot
+    mass: 0.43
+    max_grip_force: 30.0             # also stated on https://www.agibot.com/products/X1
+    max_stroke: 0.120                # total opening
+    payload_gripper: 1.5             # the X1 arm itself is rated for 0.5 kg per arm
+    open_close_time_s: 0.7
+    repeatability: 0.00005
+    supply: 24 V DC, CAN-FD on the arm DCU channel
+  command_interface: position 0..1 (0 = fully closed), effort 0..1 of max current  # agibot_x1_infer dcu_driver_module.md
+  cad_model: none published. The 20241024 STEP stops at the wrist bracket.
+  mounting:
+    parent: left_payload / right_payload   # both frames sit at the wrist pitch/roll centre
+    approach_axis: -y of the payload frame  # points down the forearm when the arm hangs at zero pose
+    flange_offset: 0.030                    # estimate: CAD wrist bracket ends 0.021 m out, plus an adapter plate
+    flange_offset_uncertainty: 0.02
+    note: >
+      left_wrist_roll.STL reaches about 0.10 m past the wrist and does not match
+      the 20241024 CAD, so it may already contain part of an end effector.
+      Check it visually before adding the gripper so the two do not overlap.
+
+  # Proposed simple parallel-jaw stand-in (estimate, sized to the published mass and stroke).
+  proposed_geometry:
+    palm_box: {size: [0.080, 0.060, 0.090], mass: 0.35}  # width across the jaws, thickness, length along approach
+    fingers:
+      count: 2
+      joint: prismatic, mirrored, 0.0 .. 0.060 each side   # 0.120 m total opening
+      finger_box: {size: [0.020, 0.018, 0.070], mass: 0.04}
+      pad_friction: 1.0
+    actuator: {force_limit: 30.0, max_speed: 0.17}        # 0.120 m in 0.7 s
+    tcp_from_flange: 0.140           # palm 0.090 + half-way down the 0.070 m fingers minus overlap
+  box_task_note: >
+    A 0.52 m box is far wider than the 0.12 m opening, and each arm is rated
+    for 0.5 kg. It has to be carried with both arms pressing on
+    opposite faces (bimanual squeeze), not pinched by one gripper, and its
+    mass should stay under about 1 kg in total.
+
+# ---------------------------------------------------------------------------
+# Everything else the stock robot senses
+# ---------------------------------------------------------------------------
+builtin_sensors:
+  - Joint position, velocity and current/effort from each PowerFlow actuator
+    (R86-2 x6, R86-3 x6, R52 x10, L28 linear x4), read at 1 kHz over EtherCAT/CAN-FD.
+  - Gripper position and current feedback (OmniPicker, 2x).
+  - Two YIS320 IMUs, only the pelvis one is used (see above).
+  - One RealSense D435 depth + RGB camera on the chest (see above).
+  - The head is a phone in a printed holder (BOM "手机支架") used as a face
+    display, not wired into the control stack. The head has room for a 3-DoF
+    neck that is not fitted.
+  - Not fitted - force/torque sensors, foot contact sensors, tactile skin, lidar,
+    microphone array, wrist cameras.
+
+# ---------------------------------------------------------------------------
+# Sensors added for SLAM, navigation and pick-and-place (not on the stock robot)
+# ---------------------------------------------------------------------------
+added_sensors:
+  mid360:
+    model: Livox Mid-360
+    purpose: 3D SLAM, localisation and obstacle detection for navigation
+    specs: {fov_h_deg: 360, fov_v_deg: [-7, 52], range_m: [0.1, 40], points_per_s: 200000,
+            frame_rate_hz: 10, imu: ICM40609 (built in), mass: 0.265, size: [0.065, 0.065, 0.060]}
+    mount:
+      parent: pelvis             # the head is rigid with torso_link; expressed in pelvis at the home pose
+      # Top of the head shell measured on the model at the home pose: pelvis (0.037, 0.001, 0.636),
+      # i.e. about 1.25 m above the floor. The lidar sits on top, upside down (as on the Unitree G1),
+      # so its -7..+52 deg field of view becomes +7..-52 deg and reaches the floor from ~1 m out.
+      xyz: [0.037, 0.0, 0.666]   # sensor origin ~30 mm above the head shell
+      rpy: [3.14159, 0.0, 0.0]   # inverted
+      confidence: planned mount; adjust to the real bracket once it is built
+  d405_left:
+    model: Intel RealSense D405
+    purpose: close-range depth of the grasp (7-50 cm) at the left wrist
+    specs: {depth_fov_deg: [87, 58], range_m: [0.07, 0.5], mass: 0.060, size: [0.042, 0.042, 0.023]}
+    mount:
+      parent: left_payload
+      xyz: pending               # set once the gripper stand-in geometry is fixed (squeeze study)
+      rpy: pending               # looks along the gripper approach direction
+  d405_right:
+    model: Intel RealSense D405
+    purpose: close-range depth of the grasp (7-50 cm) at the right wrist
+    specs: {depth_fov_deg: [87, 58], range_m: [0.07, 0.5], mass: 0.060, size: [0.042, 0.042, 0.023]}
+    mount:
+      parent: right_payload
+      xyz: pending
+      rpy: pending
