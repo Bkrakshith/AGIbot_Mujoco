@@ -28,7 +28,7 @@ commands:
   yaw_range: [-0.6, 0.6]        # rad/s
   # Pelvis height command, FIXED at the measured home height (0.613 m; X1 cfg
   # base_height_target 0.61). Kept in the obs for contract stability.
-  height_range: [0.613, 0.613]  # m
+  height_range: [0.601, 0.601]  # m (wider, deeper-knee stance, 2026-09-27)
   switch_window_s: [4.0, 16.0]  # command switch time within episode
 
 ppo:
@@ -90,7 +90,7 @@ checkpoint:
 # Commands AND domain randomisation are ramped in (cmd_scale, dr_scale): with
 # the full X1 DR from step 0 no gait ever formed (teacher_v1 attempts 3-4,
 # ablate_nodr). Both reach 1.0 by the final stage (tests/test_curriculum.py).
-# No payload stages: this is the stand/walk task. Push forces are sized for
+# From s2d on, 0-0.3 kg is carried in both hands (handle box, 2026-09-27). Push forces are sized for
 # the 36 kg X1 (60 N x 0.2 s = 0.33 m/s; X1 cfg pushes 0.2 m/s).
 # Budgets are H1-2-derived, doubled because the X1 runs at 100 Hz (twice the
 # env steps per simulated second). A stall -> more budget first, never a
@@ -169,7 +169,7 @@ curriculum:
     cmd_scale: 0.7
     dr_scale: 1.0
     num_timesteps: 150_000_000
-    payload_max_total: 0.0
+    payload_max_total: 0.3        # kg in both hands: the 0.1 kg handle box + margin
     payload_symmetric: true
     push_max_n: 0.0
     arm_range_scale: 1.0
@@ -185,8 +185,10 @@ curriculum:
     # mostly because of a normaliser bug (push obs std 1e-6, now fixed in
     # ppo_teacher.unfreeze_constant_dims); walking survival at s2 conditions
     # is still only ~32 %, and full DR is the hardest step in the curriculum.
-    num_timesteps: 200_000_000
-    payload_max_total: 0.0
+    # 200M -> 100M for teacher_v14 (2026-09-28): warm start from a policy that
+    # already passes s3 (teacher_v13); only the stance, grippers and hand load changed.
+    num_timesteps: 100_000_000
+    payload_max_total: 0.3        # kg in both hands: the 0.1 kg handle box + margin
     payload_symmetric: true
     push_max_n: 30.0
     arm_range_scale: 1.0        # task arm poses x 1.0 (arms-down -> full poses)
@@ -199,7 +201,7 @@ curriculum:
     cmd_scale: 1.0              # velocity ranges x 1.0 (command curriculum)
     dr_scale: 1.0               # domain randomisation x 1.0 (DR curriculum)
     num_timesteps: 60_000_000
-    payload_max_total: 0.0
+    payload_max_total: 0.3        # kg in both hands: the 0.1 kg handle box + margin
     payload_symmetric: true
     push_max_n: 60.0
     arm_range_scale: 1.0        # task arm poses x 1.0 (arms-down -> full poses)

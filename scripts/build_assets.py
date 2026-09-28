@@ -44,6 +44,13 @@ RENAME = {"x1-body": "pelvis", "body_pitch": "torso_link"}
 # it to the 1 kHz behaviour. The X1 training randomised armature over
 # [0.0001, 0.05] (X1 cfg domain_rand.joint_armature_range); 0.01 sits inside.
 ARMATURE = 0.01
+
+# Hardware added for the office tasks (deploy/isaac/sensors/x1_sensors.yaml):
+# OmniPicker gripper 0.43 kg + RealSense D405 0.06 kg per wrist, Livox Mid-360
+# 0.265 kg on top of the head (torso_link frame: y is up).
+GRIPPER_MASS = 0.49
+MID360_MASS = 0.265
+MID360_POS = [0.0345, 0.51, 0.0]
 SOLE_HALF_THICKNESS = 0.01
 
 # Arm joints. The vendor model welds the arms; the vendor URDF keeps these six
@@ -123,6 +130,24 @@ def _base_tree():
         ET.SubElement(pb, "geom", name=f"{side}_payload_viz", type="sphere",
                       size="0.03", contype="0", conaffinity="0", group="1",
                       rgba="0.9 0.4 0.1 0.5")
+        # OmniPicker gripper (0.43 kg) + wrist D405 (0.06 kg) as one rigid
+        # mass on its own body, so payload DR (which rewrites the payload
+        # body's mass) cannot erase it. Centred 0.09 m along the approach
+        # direction (-y of the wrist frame); see deploy/isaac/sensors/x1_sensors.yaml.
+        gb = ET.SubElement(wrist, "body", name=f"{side}_gripper", pos="0 -0.09 0")
+        ET.SubElement(gb, "inertial", pos="0 0 0", mass=str(GRIPPER_MASS),
+                      diaginertia="6e-4 3e-4 6e-4")
+        ET.SubElement(gb, "geom", name=f"{side}_gripper_viz", type="box",
+                      size="0.04 0.06 0.03", contype="0", conaffinity="0",
+                      group="1", rgba="0.15 0.15 0.15 1")
+    # Livox Mid-360 upside down on top of the head (0.265 kg), torso_link frame
+    torso = _find_body(root, "torso_link")
+    lb = ET.SubElement(torso, "body", name="mid360", pos=_fmt(MID360_POS))
+    ET.SubElement(lb, "inertial", pos="0 0 0", mass=str(MID360_MASS),
+                  diaginertia="2e-4 2e-4 2e-4")
+    ET.SubElement(lb, "geom", name="mid360_viz", type="cylinder",
+                  size="0.0325 0.03", zaxis="0 1 0", contype="0",
+                  conaffinity="0", group="1", rgba="0.1 0.1 0.1 1")
     return tree, root
 
 

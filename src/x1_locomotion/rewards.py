@@ -33,6 +33,7 @@ class RewardInputs(NamedTuple):
     action: jnp.ndarray           # (27,)
     prev_action: jnp.ndarray      # (27,)
     knee_angles: jnp.ndarray      # (2,) absolute left/right knee joint angles (rad)
+    feet_lateral: jnp.ndarray     # () left-to-right foot distance across the pelvis (m)
     leg_joint_pos: jnp.ndarray    # (12,) absolute left+right leg joints (rad)
     cpg_ref: jnp.ndarray          # (12,) CPG reference for current gait phase
     cpg_stance: jnp.ndarray       # (2,) bool: clock says foot should be in stance
@@ -243,6 +244,14 @@ def action_rate(action, prev_action):
     return jnp.sum(jnp.square(action - prev_action))
 
 
+def feet_distance(feet_lateral, band):
+    """Squared distance of the stance width outside [lo, hi]; zero inside.
+    Keeps the feet about shoulder width apart while standing and walking."""
+    lo, hi = band
+    return jnp.square(jnp.maximum(0.0, lo - feet_lateral)) + \
+        jnp.square(jnp.maximum(0.0, feet_lateral - hi))
+
+
 def knee_bend(knee_angles, min_angle: float):
     """Penalise knees straightening below min_angle — forces spring-like preload.
     Only fires on the deficit; zero penalty when both knees are sufficiently bent."""
@@ -342,6 +351,7 @@ def compute_reward(x: RewardInputs, cfg) -> tuple[jnp.ndarray, dict]:
         "joint_acc": joint_acc(x.joint_acc),
         "action_rate": action_rate(x.action, x.prev_action),
         "knee_bend": knee_bend(x.knee_angles, cfg.min_knee_angle),
+        "feet_distance": feet_distance(x.feet_lateral, cfg.feet_distance_band),
         "gait_imitation": gait_imitation(x.leg_joint_pos, x.cpg_ref, x.cmd, cfg.cpg),
         "gait_contact_stance": gait_contact_stance(x.feet_contact, x.cpg_stance, x.cmd, cfg.cpg),
         "gait_contact_swing": gait_contact_swing(x.feet_contact, x.cpg_stance, x.cmd, cfg.cpg),

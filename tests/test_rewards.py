@@ -42,6 +42,7 @@ def _inputs(**overrides):
         action=jnp.zeros(N_ACT),
         prev_action=jnp.zeros(N_ACT),
         knee_angles=jnp.array([0.9, 0.9]),  # bent knees, no penalty
+        feet_lateral=jnp.array(0.306),      # default stance width, no penalty
         leg_joint_pos=jnp.zeros(12),
         cpg_ref=jnp.zeros(12),              # identical → zero gait_imitation error
         cpg_stance=jnp.array([True, True]), # matches both-feet-planted default
@@ -262,3 +263,12 @@ def test_base_acc_penalises_vibration(cfg):
     _, terms = rewards.compute_reward(x, cfg)
     assert float(terms["base_acc"]) == pytest.approx(25.0)
     assert cfg.weights.base_acc < 0 and cfg.weights.torso_upright > 0
+
+
+def test_feet_distance_zero_inside_band_and_grows_outside():
+    band = (0.28, 0.34)
+    assert float(rewards.feet_distance(jnp.array(0.306), band)) == 0.0
+    narrow = float(rewards.feet_distance(jnp.array(0.24), band))
+    wide = float(rewards.feet_distance(jnp.array(0.40), band))
+    assert narrow > 0.0 and wide > 0.0
+    assert abs(narrow - 0.04 ** 2) < 1e-6

@@ -138,10 +138,14 @@ def test_arm_schedule_moves_arms_during_an_episode(cfg):
     # moves are continuous (linear ramps), never a jump
     assert np.abs(np.diff(cmds, axis=0)).max() < 0.2
 
-def test_task_samples_no_payload(cfg):
-    """Stand/walk: the configured range and every stage are 0 kg."""
-    assert list(cfg.domain_rand.payload.total_mass_range) == [0.0, 0.0]
-    assert all(s.payload_max_total == 0.0 for s in cfg.stages)
+def test_payload_is_the_handle_box_from_s2d(cfg):
+    """0-0.3 kg split evenly between the hands (the carried handle box), only
+    from s2d on; the earlier gait stages carry nothing."""
+    assert list(cfg.domain_rand.payload.total_mass_range) == [0.0, 0.3]
+    names = [s.name for s in cfg.stages]
+    first = names.index("s2d_dr100")
+    assert all(s.payload_max_total == 0.0 for s in cfg.stages[:first])
+    assert all(s.payload_max_total == 0.3 and s.payload_symmetric for s in cfg.stages[first:])
 
 
 def test_symmetric_arm_poses_are_common(cfg):

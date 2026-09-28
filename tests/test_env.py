@@ -180,6 +180,7 @@ def _reward_inputs_probe(env, state):
         arm_residual=jnp2.zeros(N_ARM), torque=jnp2.zeros(N_LT),
         joint_acc=jnp2.zeros(N_LT), base_acc=jnp2.zeros(3), action=jnp2.zeros(N_ACT),
         prev_action=jnp2.zeros(N_ACT), knee_angles=jnp2.array([0.9, 0.9]),
+        feet_lateral=jnp2.array(0.306),
         leg_joint_pos=jnp2.zeros(12), cpg_ref=jnp2.zeros(12),  # 2 legs x 6
         cpg_stance=jnp2.array([True, True]))
 

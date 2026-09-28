@@ -2,10 +2,9 @@
 # state.info-driven model-field replacement (randomize.py), so every reset —
 # including auto-resets inside a training batch — draws a fresh sample.
 
-# Payload machinery is kept (the hand bodies exist) but every stand/walk stage
-# sets payload_max_total: 0, so no load is ever sampled.
+# Payload in both hands from stage s2d on (the carried handle box).
 payload:
-  total_mass_range: [0.0, 0.0]   # kg; stand/walk task carries nothing
+  total_mass_range: [0.0, 0.3]   # kg; stages cap it with payload_max_total (handle box 0.1 kg)
   split_fraction_range: [0.0, 1.0]  # left-hand share; covers fully asymmetric 7/0
   com_offset_range: [-0.10, 0.10]   # m, per hand, per axis (body_ipos)
   inertia_radius: 0.1            # m, point-mass sphere approx for body_inertia

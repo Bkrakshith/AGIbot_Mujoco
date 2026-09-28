@@ -99,8 +99,8 @@
                   <geom type="sphere" size="0.02" pos="-0.03 -0.0408 0.07" rgba="255 0 0 0.5" />
                   <geom type="sphere" size="0.02" pos="0.03 -0.0408 -0.07" rgba="255 0 0 0.5" />
                   <geom type="sphere" size="0.02" pos="-0.03 -0.0408 -0.07" rgba="255 0 0 0.5" />
-                  <geom name="left_foot" type="box" size="0.072923 0.0342371 0.01" pos="5.2471e-06 -0.0337387 9.23883e-05" quat="0.51111 -0.50483 -0.488473 -0.495285" contype="0" conaffinity="0" group="4" rgba="0.7 0.3 0.3 0.2" />
-                  <geom name="left_foot_self" type="sphere" size="0.04" pos="2.75374e-05 -0.00374125 0.000484866" contype="16" conaffinity="16" group="3" rgba="0.7 0.3 0.3 0.4" />
+                  <geom name="left_foot" type="box" size="0.0729227 0.0342366 0.01" pos="5.36448e-06 -0.0337417 9.2601e-05" quat="0.511113 -0.504823 -0.488461 -0.4953" contype="0" conaffinity="0" group="4" rgba="0.7 0.3 0.3 0.2" />
+                  <geom name="left_foot_self" type="sphere" size="0.04" pos="2.81632e-05 -0.00374428 0.00048615" contype="16" conaffinity="16" group="3" rgba="0.7 0.3 0.3 0.4" />
                 </body>
               </body>
             </body>
@@ -139,8 +139,8 @@
                   <geom type="sphere" size="0.02" pos="-0.03 0.0408 0.07" rgba="255 0 0 0.5" />
                   <geom type="sphere" size="0.02" pos="0.03 0.0408 -0.07" rgba="255 0 0 0.5" />
                   <geom type="sphere" size="0.02" pos="-0.03 0.0408 -0.07" rgba="255 0 0 0.5" />
-                  <geom name="right_foot" type="box" size="0.0729281 0.0342441 0.01" pos="2.51787e-06 0.0335427 7.5887e-05" quat="0.51057 0.505429 -0.489197 0.494516" contype="0" conaffinity="0" group="4" rgba="0.7 0.3 0.3 0.2" />
-                  <geom name="right_foot_self" type="sphere" size="0.04" pos="1.29256e-05 0.00354437 0.00038957" contype="16" conaffinity="16" group="3" rgba="0.7 0.3 0.3 0.4" />
+                  <geom name="right_foot" type="box" size="0.0729289 0.034246 0.01" pos="2.67268e-06 0.0335375 7.53367e-05" quat="0.51055 0.505462 -0.489205 0.494494" contype="0" conaffinity="0" group="4" rgba="0.7 0.3 0.3 0.2" />
+                  <geom name="right_foot_self" type="sphere" size="0.04" pos="1.37124e-05 0.00353915 0.000386523" contype="16" conaffinity="16" group="3" rgba="0.7 0.3 0.3 0.4" />
                 </body>
               </body>
             </body>
@@ -187,6 +187,10 @@
                             <inertial pos="0 0 0" mass="0.05" diaginertia="2e-4 2e-4 2e-4" />
                             <geom name="left_payload_viz" type="sphere" size="0.03" contype="0" conaffinity="0" group="1" rgba="0.9 0.4 0.1 0.5" />
                           </body>
+                          <body name="left_gripper" pos="0 -0.09 0">
+                            <inertial pos="0 0 0" mass="0.49" diaginertia="6e-4 3e-4 6e-4" />
+                            <geom name="left_gripper_viz" type="box" size="0.04 0.06 0.03" contype="0" conaffinity="0" group="1" rgba="0.15 0.15 0.15 1" />
+                          </body>
                           <geom name="left_hand" type="sphere" size="0.04" pos="0 0 0" contype="4" conaffinity="1" group="3" rgba="0.7 0.3 0.3 0.4" />
                         </body>
                       </body>
@@ -226,6 +230,10 @@
                             <inertial pos="0 0 0" mass="0.05" diaginertia="2e-4 2e-4 2e-4" />
                             <geom name="right_payload_viz" type="sphere" size="0.03" contype="0" conaffinity="0" group="1" rgba="0.9 0.4 0.1 0.5" />
                           </body>
+                          <body name="right_gripper" pos="0 -0.09 0">
+                            <inertial pos="0 0 0" mass="0.49" diaginertia="6e-4 3e-4 6e-4" />
+                            <geom name="right_gripper_viz" type="box" size="0.04 0.06 0.03" contype="0" conaffinity="0" group="1" rgba="0.15 0.15 0.15 1" />
+                          </body>
                           <geom name="right_hand" type="sphere" size="0.04" pos="0 0 0" contype="4" conaffinity="1" group="3" rgba="0.7 0.3 0.3 0.4" />
                         </body>
                       </body>
@@ -233,6 +241,10 @@
                   </body>
                 </body>
               </body>
+            </body>
+            <body name="mid360" pos="0.0345 0.51 0">
+              <inertial pos="0 0 0" mass="0.265" diaginertia="2e-4 2e-4 2e-4" />
+              <geom name="mid360_viz" type="cylinder" size="0.0325 0.03" zaxis="0 1 0" contype="0" conaffinity="0" group="1" rgba="0.1 0.1 0.1 1" />
             </body>
             <geom name="torso_capsule" type="capsule" size="0.10" fromto="0 0.08 0 0 0.33 0" contype="8" conaffinity="0" group="3" rgba="0.7 0.3 0.3 0.4" />
           </body>
@@ -267,6 +279,6 @@
     <motor name="motor_right_wrist_pitch_joint" joint="right_wrist_pitch_joint" ctrlrange="-6 6" />
   </actuator>
   <keyframe>
-    <key name="home" qpos="0 0 0.612968 1 0 0 0 0.4 0.05 -0.31 0.49 -0.21 0 -0.4 -0.05 0.31 0.49 -0.21 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+    <key name="home" qpos="0 0 0.600953 1 0 0 0 0.5331 0.049 -0.4115 0.65 -0.2781 -0.0377 -0.534 -0.049 0.4122 0.65 -0.2782 0.0377 0 0 0 0 0 0 0 0 0 0 0 0" />
   </keyframe>
 </mujoco>

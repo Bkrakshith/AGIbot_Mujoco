@@ -68,7 +68,7 @@ def test_envelopes_come_from_config(cfg):
     c = cfg.train.commands
     assert env["vx_range"] == list(c.vx_range)
     assert env["base_height_range"] == list(c.height_range)
-    assert _payload_assumptions(cfg)["total_kg"] == [0.0, 0.0]
+    assert _payload_assumptions(cfg)["total_kg"] == [0.0, 0.3]
 
 
 def test_sidecar_is_json_serialisable(sidecar):

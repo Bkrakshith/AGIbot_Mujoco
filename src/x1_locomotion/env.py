@@ -547,6 +547,7 @@ class X1LocomotionEnv(Env):
             action=action,
             prev_action=info["last_action"],
             knee_angles=data.qpos[jnp.array(KNEE_QPOS)],  # left/right knee (absolute rad)
+            feet_lateral=quat_rotate_inv(quat, foot_pos[0] - foot_pos[1])[1],
             leg_joint_pos=data.qpos[LEG_QPOS],             # left+right leg joints (12,)
             cpg_ref=cpg_ref,
             cpg_stance=cpg_stance,

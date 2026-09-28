@@ -75,6 +75,8 @@ weights:
   action_rate: -0.06          # smoothness pack, was -0.02
   # knee spring: penalise deficit below min_knee_angle to keep knees bent
   knee_bend: -2.0
+  # stance width: feet about shoulder width apart (softer, wider base), 2026-09-27
+  feet_distance: -200.0
   # CPG imitation: MSE between leg joints and reference, gated by effective
   # commanded speed (yaw folded in). -2.0 was ~0.08/step at max deviation —
   # invisible next to tracking (1.5) and termination (-100). At -15.0 a large
@@ -104,7 +106,8 @@ weights:
 support_margin_target: 0.035
 capture_margin_target: 0.02
 
-min_knee_angle: 0.25  # rad (~14°; X1 default knee is 0.49); knees below this are penalised by knee_bend
+min_knee_angle: 0.45  # rad (~26°; default knee is 0.65); knees below this are penalised by knee_bend
+feet_distance_band: [0.28, 0.34]  # m, left-right foot centres across the pelvis (default stance 0.306)
 
 # Central Pattern Generator (X1 reference gait, see src/x1_locomotion/cpg.py).
 # Shape and numbers from the vendor X1 cfg (rewards.cycle_time,
