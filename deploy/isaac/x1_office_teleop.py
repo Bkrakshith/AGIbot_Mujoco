@@ -9,6 +9,7 @@ or from inside an Isaac Sim window you already have open: Window > Script
 Editor > File > Open this file > Run. Running it again rebuilds the scene.
 
 Options (terminal only): --env USD (another environment), --spawn X Y YAW,
+--light INTENSITY (dome light, default 1200; 0 = office lights only),
 --obs_noise (full trained sensor noise), --no_office_collision (keep the
 office's own colliders, see office_collision.py), --test (headless self-test:
 stands, walks forward for 6 s, exits 0 if the robot walked and never fell).
@@ -60,6 +61,8 @@ if not IN_KIT:                                # started with python.sh: open our
                     help="ROS 2: sensors, odom, tf, joint states; drive with /cmd_vel (see x1_ros.py)")
     ap.add_argument("--task", action="store_true",
                     help="box pick-and-place props: pickup table, handle box, grippers (x1_task.py)")
+    ap.add_argument("--light", type=float, default=None,
+                    help="dome light intensity (default 1200; 0 = the office's own lights only)")
     ap.add_argument("--headless", action="store_true", help="no window (e.g. ROS-driven runs)")
     ap.add_argument("--test", action="store_true", help="headless self-test, then exit")
     ARGS = ap.parse_args()
@@ -109,6 +112,7 @@ OBS_NOISE = False                           # True = full trained sensor noise
 OFFICE_COLLISION = True                     # static colliders on walls, doors, furniture
 ROS = False                                 # ROS 2 interface (x1_ros.py)
 TASK = False                                # pickup table, handle box and grasping (x1_task.py)
+DOME_LIGHT = 1200.0                         # extra even light over the office (the office's own lights are dim)
 if ARGS is not None:
     if ARGS.spawn:
         SPAWN_XY, SPAWN_YAW = tuple(ARGS.spawn[:2]), ARGS.spawn[2]
@@ -116,6 +120,8 @@ if ARGS is not None:
     OFFICE_COLLISION = not ARGS.no_office_collision
     ROS = ARGS.ros
     TASK = ARGS.task
+    if ARGS.light is not None:
+        DOME_LIGHT = ARGS.light
 
 if ISAAC_DIR not in sys.path:
     sys.path.insert(0, ISAAC_DIR)
@@ -173,6 +179,11 @@ class Teleop:
         stage.SetDefaultPrim(stage.GetPrimAtPath("/World"))
         UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
         UsdGeom.SetStageMetersPerUnit(stage, 1.0)
+        if DOME_LIGHT > 0:
+            from pxr import UsdLux
+            dome = UsdLux.DomeLight.Define(stage, "/World/Lights/Dome")
+            dome.CreateIntensityAttr(DOME_LIGHT)
+            dome.CreateColorAttr(Gf.Vec3f(1.0, 0.98, 0.95))
         office = stage.DefinePrim("/World/Office", "Xform")
         office.GetReferences().AddReference(ARGS.env if ARGS is not None and ARGS.env else _office_usd())
         scene = UsdPhysics.Scene.Define(stage, "/World/PhysicsScene")

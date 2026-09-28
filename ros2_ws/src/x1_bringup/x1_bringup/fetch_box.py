@@ -254,6 +254,9 @@ class FetchBox(BasicNavigator):
             return False
         self.info("box held; lifting")
         self.arms(arm_pose_for(top_rel + P.LIFT))
+        # back away from the table first: turning on the spot 0.37 m from it
+        # looks like a collision to Nav2's controller
+        self._move(vx=-0.2, duration=3.0)
         if not self.approach(P.PLACE_BOX, lambda: P.PLACE_BOX, "map", "place", P.PLACE_APPROACH_BACK,
                              P.PLACE_STOP_DRIFT):
             return False

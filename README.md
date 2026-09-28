@@ -276,6 +276,9 @@ Useful options:
   radians.
 - `--env some_scene.usd` swaps the office for another environment. It needs
   a floor with collision at height 0.
+- `--light 2000` makes the office brighter. The scene adds an even dome light
+  (intensity 1200 by default) on top of the office's own lights, which are
+  dim. `--light 0` turns the dome light off.
 
 Two things to know about the office scene:
 
@@ -417,6 +420,13 @@ drawing conclusions:
   find the box with the D435 or the wrist cameras.
 - **Odometry is perfect.** `/odom` is the simulator's ground truth. A real
   robot needs leg and IMU odometry, or lidar odometry from the Mid-360.
+- **Runs with windows open are not reliable yet.** The full task has
+  completed end to end with Isaac Sim headless (`--headless`) and without
+  RViz. With both windows open the simulation slows down, localisation's
+  transforms arrive late, and Nav2's controller aborted the carry while
+  turning the robot away from the pickup table. The transform tolerance is
+  now 2 s and the robot steps back from the table first; this has not been
+  re-tested with windows open yet.
 - **The pickup table is a stand-in.** It is a 0.75 m table placed next to
   the north reception. The reception counter's visitor ledge is 1.12 m, which
   is higher than the arms can reach, and the desk behind the counter is
